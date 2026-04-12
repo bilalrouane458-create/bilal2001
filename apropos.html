@@ -15,113 +15,212 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f8;
+            color: #1a2a3a;
+            line-height: 1.5;
+        }
+
         .fond {
-            background: linear-gradient(135deg, #f5f7fc 0%, #eef2f8 100%);
+            background: linear-gradient(135deg, #f0f2f8 0%, #e8ecf5 100%);
             min-height: 100vh;
         }
+
         .contenu {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
+
+        /* HEADER & NAVIGATION - BLEU FONCÉ */
+        header {
+            background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 15px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .menu li {
+            margin: 0 5px;
+        }
+
+        .menu li a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .menu li a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: #0a1a3a;
+            color: white;
+            border-radius: 30px;
+        }
+
+        .logo img {
+            height: 45px;
+            vertical-align: middle;
+        }
+
+        /* BANNIÈRE BLEU FONCÉ - TEXTE BLANC */
         #titre-apropos {
             text-align: center;
             margin-bottom: 50px;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #2c3e66 0%, #1a2a4a 100%);
-            border-radius: 20px;
+            padding: 50px 30px;
+            background: #0a1a3a;
+            background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
+            border-radius: 25px;
             color: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
+
         .page-titre {
             font-size: 3rem;
             margin-bottom: 15px;
             font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         }
+
         .page-sous-titre {
             font-size: 1.2rem;
             opacity: 0.95;
+            color: white;
         }
+
+        /* SECTIONS */
         .section-apropos {
             background: white;
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 25px;
+            padding: 35px;
             margin-bottom: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
         }
+
         .section-apropos:hover {
             transform: translateY(-3px);
         }
+
         .section_titres {
             font-size: 1.8rem;
-            color: #2c3e66;
-            border-left: 5px solid #2c3e66;
+            color: #0a1a3a;
+            border-left: 5px solid #0a1a3a;
             padding-left: 20px;
             margin-bottom: 30px;
+            font-weight: 600;
         }
+
         .section_titres i {
-            color: #2c3e66;
+            color: #0a1a3a;
             margin-right: 10px;
         }
+
+        /* PROFIL AVEC PHOTO À GAUCHE */
         .profil-container {
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: 280px 1fr;
             gap: 40px;
             align-items: start;
         }
+
         @media (max-width: 768px) {
             .profil-container {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
         }
+
         .photo-profil {
             text-align: center;
         }
+
         .photo-profil img {
             width: 250px;
             height: 250px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #2c3e66;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 4px solid #0a1a3a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
+
         .photo-profil h3 {
             margin-top: 20px;
-            color: #2c3e66;
+            color: #0a1a3a;
             font-size: 1.3rem;
         }
+
         .photo-profil p {
-            color: #6c757d;
+            color: #4a627a;
             margin-top: 5px;
         }
+
         .bio-content p {
             font-size: 1.05rem;
             line-height: 1.7;
             margin-bottom: 15px;
             color: #2c3e50;
         }
+
         .bio-highlight {
-            background: linear-gradient(135deg, #2c3e6615, #1a2a4a15);
+            background: #eef2fa;
             padding: 20px;
             border-radius: 15px;
             margin-top: 20px;
-            border-left: 4px solid #2c3e66;
+            border-left: 4px solid #0a1a3a;
         }
+
+        .bio-highlight p {
+            margin: 0;
+            font-style: italic;
+            color: #1e2e3e;
+        }
+
+        /* TIMELINE */
         .parcours-timeline {
             display: flex;
             flex-direction: column;
             gap: 25px;
         }
+
         .timeline-item {
             display: flex;
             gap: 20px;
             padding-bottom: 20px;
             border-bottom: 1px solid #e0e6ed;
         }
+
         .timeline-date {
-            min-width: 120px;
-            background: #2c3e66;
+            min-width: 140px;
+            background: #0a1a3a;
             color: white;
             padding: 8px 15px;
             border-radius: 25px;
@@ -129,14 +228,17 @@
             font-weight: 600;
             height: fit-content;
         }
+
         .timeline-content h3 {
-            color: #2c3e66;
+            color: #0a1a3a;
             margin-bottom: 8px;
         }
+
         .timeline-content p {
-            color: #6c757d;
+            color: #4a627a;
             line-height: 1.5;
         }
+
         @media (max-width: 600px) {
             .timeline-item {
                 flex-direction: column;
@@ -145,118 +247,231 @@
                 width: fit-content;
             }
         }
+
+        /* COMPÉTENCES */
         .competences-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
+
         .categorie-competence {
-            background: #f8f9fa;
-            border-radius: 15px;
+            background: #f8fafd;
+            border-radius: 18px;
             padding: 20px;
+            border: 1px solid #e8edf5;
+            transition: all 0.3s ease;
         }
+
+        .categorie-competence:hover {
+            border-color: #0a1a3a;
+        }
+
         .categorie-competence h3 {
-            color: #2c3e66;
+            color: #0a1a3a;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
+
         .skills-list {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
         }
+
         .skill-badge {
             background: white;
-            color: #2c3e66;
+            color: #0a1a3a;
             padding: 8px 16px;
             border-radius: 25px;
             font-size: 0.9rem;
-            border: 1px solid #2c3e66;
+            border: 1px solid #0a1a3a;
             transition: all 0.3s ease;
         }
+
         .skill-badge:hover {
-            background: #2c3e66;
+            background: #0a1a3a;
             color: white;
             transform: translateY(-2px);
         }
+
+        .categorie-competence ul {
+            margin-left: 20px;
+            color: #2c3e50;
+        }
+
+        .categorie-competence ul li {
+            margin-bottom: 8px;
+        }
+
+        /* LANGUES */
         .langues-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
+
         .langue-card {
-            background: #f8f9fa;
-            border-radius: 15px;
+            background: #f8fafd;
+            border-radius: 18px;
             padding: 20px;
             text-align: center;
             transition: all 0.3s ease;
+            border: 1px solid #e8edf5;
         }
+
         .langue-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-color: #0a1a3a;
         }
+
         .langue-nom {
             font-size: 1.3rem;
             font-weight: 700;
-            color: #2c3e66;
+            color: #0a1a3a;
             margin-bottom: 10px;
         }
+
         .langue-niveau {
             display: inline-block;
-            background: #2c3e66;
+            background: #0a1a3a;
             color: white;
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.85rem;
             margin-top: 10px;
         }
+
+        /* CENTRES D'INTÉRÊT */
         .interets-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 20px;
         }
+
         .interet-card {
             text-align: center;
             padding: 25px;
-            background: #f8f9fa;
-            border-radius: 15px;
+            background: #f8fafd;
+            border-radius: 18px;
             transition: all 0.3s ease;
+            border: 1px solid #e8edf5;
         }
+
         .interet-card:hover {
             transform: translateY(-5px);
-            background: #2c3e66;
+            background: #0a1a3a;
             color: white;
         }
+
         .interet-card i {
             font-size: 2.5rem;
             margin-bottom: 15px;
-            color: #2c3e66;
+            color: #0a1a3a;
         }
+
         .interet-card:hover i {
             color: white;
         }
+
         .interet-card h4 {
             margin-bottom: 8px;
         }
+
         .interet-card p {
             font-size: 0.85rem;
             opacity: 0.8;
         }
-        .active {
-            background: #2c3e66 !important;
-            color: white !important;
-            border-radius: 25px;
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #0a1a3a, #0a1222);
+            color: #e0e7ff;
+            margin-top: 60px;
+            padding: 45px 20px 25px;
         }
-        .nav-link.active {
-            background: #2c3e66;
+
+        .footer-contenu {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-titre {
             color: white;
-            border-radius: 25px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
         }
+
+        .footer-menu, .footer-competences, .footer-certifications {
+            list-style: none;
+        }
+
+        .footer-menu li, .footer-competences li, .footer-certifications li {
+            margin-bottom: 10px;
+        }
+
+        .footer-menu a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-menu a:hover {
+            color: white;
+        }
+
+        .footer-bas {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #2d3a5e;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .reseaux-footer {
+            margin-bottom: 15px;
+        }
+
+        .reseaux-footer a img {
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s;
+        }
+
+        .reseaux-footer a:hover img {
+            transform: scale(1.1);
+        }
+
+        .copyright p {
+            color: #8a9bb5;
+            margin: 5px 0;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .page-titre {
                 font-size: 2rem;
+            }
+            .section-apropos {
+                padding: 20px;
+            }
+            .section_titres {
+                font-size: 1.4rem;
+            }
+            .menu {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .menu li a {
+                display: block;
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -285,15 +500,17 @@
         <div class="contenu">
             <span id="saut_menu"></span>
             
+            <!-- Bannière bleu foncé - texte blanc -->
             <section id="titre-apropos">
                 <h1 class="page-titre">À propos de moi</h1>
                 <p class="page-sous-titre">Découvrez mon parcours, mes compétences et mes aspirations professionnelles</p>
             </section>
 
+            <!-- Section Profil avec PHOTO À GAUCHE -->
             <section id="profil" class="section-apropos">
                 <div class="profil-container">
                     <div class="photo-profil">
-                        <img src="Images/Photo pro.jpeg" alt="Bilal Rouane">
+                        <img src="Images/pppp.jpeg" alt="Bilal Rouane">
                         <h3>Bilal Rouane</h3>
                         <p>Étudiant BTS SISR</p>
                         <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
@@ -308,6 +525,7 @@
                 </div>
             </section>
 
+            <!-- Parcours -->
             <section id="parcours" class="section-apropos">
                 <h2 class="section_titres"><i class="fas fa-graduation-cap"></i> Mon parcours</h2>
                 <div class="parcours-timeline">
@@ -335,6 +553,7 @@
                 </div>
             </section>
 
+            <!-- Compétences techniques -->
             <section id="competences" class="section-apropos">
                 <h2 class="section_titres"><i class="fas fa-code"></i> Compétences techniques</h2>
                 <div class="competences-grid">
@@ -383,6 +602,7 @@
                 </div>
             </section>
 
+            <!-- Langues -->
             <section id="langues" class="section-apropos">
                 <h2 class="section_titres"><i class="fas fa-language"></i> Langues</h2>
                 <div class="langues-grid">
@@ -409,6 +629,7 @@
                 </div>
             </section>
 
+            <!-- Centres d'intérêt -->
             <section id="interets" class="section-apropos">
                 <h2 class="section_titres"><i class="fas fa-heart"></i> Centres d'intérêt</h2>
                 <div class="interets-grid">
@@ -421,12 +642,13 @@
                 </div>
             </section>
 
+            <!-- Objectifs -->
             <section id="objectifs" class="section-apropos">
                 <h2 class="section_titres"><i class="fas fa-bullseye"></i> Mes objectifs</h2>
                 <div class="competences-grid">
                     <div class="categorie-competence">
                         <h3><i class="fas fa-short-term"></i> Court terme</h3>
-                        <ul style="margin-left: 20px; color: #2c3e50;">
+                        <ul>
                             <li>Obtenir ma certification Fortinet NSE4</li>
                             <li>Valider mon BTS SISR avec mention</li>
                             <li>Effectuer un stage enrichissant en entreprise</li>
@@ -434,7 +656,7 @@
                     </div>
                     <div class="categorie-competence">
                         <h3><i class="fas fa-long-term"></i> Long terme</h3>
-                        <ul style="margin-left: 20px; color: #2c3e50;">
+                        <ul>
                             <li>Poursuivre en Bachelor puis Master en cybersécurité</li>
                             <li>Devenir expert en infrastructure et sécurité</li>
                             <li>Construire une carrière internationale</li>
@@ -442,7 +664,7 @@
                     </div>
                     <div class="categorie-competence">
                         <h3><i class="fas fa-certificate"></i> Certifications visées</h3>
-                        <ul style="margin-left: 20px; color: #2c3e50;">
+                        <ul>
                             <li>Fortinet NSE4</li>
                             <li>Cisco CCNA</li>
                             <li>Security+</li>
