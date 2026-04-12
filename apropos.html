@@ -165,4 +165,351 @@
         .skills-list {
             display: flex;
             flex-wrap: wrap;
-            gap
+            gap: 12px;
+        }
+        .skill-badge {
+            background: white;
+            color: #2c3e66;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            border: 1px solid #2c3e66;
+            transition: all 0.3s ease;
+        }
+        .skill-badge:hover {
+            background: #2c3e66;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .langues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .langue-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .langue-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .langue-nom {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e66;
+            margin-bottom: 10px;
+        }
+        .langue-niveau {
+            display: inline-block;
+            background: #2c3e66;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+        .interets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .interet-card {
+            text-align: center;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        .interet-card:hover {
+            transform: translateY(-5px);
+            background: #2c3e66;
+            color: white;
+        }
+        .interet-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #2c3e66;
+        }
+        .interet-card:hover i {
+            color: white;
+        }
+        .interet-card h4 {
+            margin-bottom: 8px;
+        }
+        .interet-card p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        .active {
+            background: #2c3e66 !important;
+            color: white !important;
+            border-radius: 25px;
+        }
+        .nav-link.active {
+            background: #2c3e66;
+            color: white;
+            border-radius: 25px;
+        }
+        @media (max-width: 768px) {
+            .page-titre {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="fond">
+
+    <header>
+        <nav id="navigation" aria-label="Navigation principale">
+            <ul class="menu">
+                <li class="logo">
+                    <img src="Images/signature.png" id="signature" alt="Signature Bilal Rouane">
+                </li>
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="apropos.html" class="nav-link active"><i class="fas fa-user"></i> À propos</a></li>
+                <li><a href="btssisr.html" class="nav-link"><i class="fas fa-graduation-cap"></i> BTS SISR</a></li>
+                <li><a href="e5.html" class="nav-link"><i class="fas fa-tasks"></i> Épreuve E5</a></li>
+                <li><a href="e6.html" class="nav-link"><i class="fas fa-server"></i> Épreuve E6</a></li>
+                <li><a href="veille.html" class="nav-link"><i class="fas fa-binoculars"></i> Veille</a></li>
+                <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+        <span id="saut_separateur"></span>
+    </header>
+
+    <main>
+        <div class="contenu">
+            <span id="saut_menu"></span>
+            
+            <section id="titre-apropos">
+                <h1 class="page-titre">À propos de moi</h1>
+                <p class="page-sous-titre">Découvrez mon parcours, mes compétences et mes aspirations professionnelles</p>
+            </section>
+
+            <section id="profil" class="section-apropos">
+                <div class="profil-container">
+                    <div class="photo-profil">
+                        <img src="Images/Photo pro.jpeg" alt="Bilal Rouane">
+                        <h3>Bilal Rouane</h3>
+                        <p>Étudiant BTS SISR</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+                    </div>
+                    <div class="bio-content">
+                        <p>Je suis un étudiant passionné par les <strong>systèmes et réseaux informatiques</strong>, actuellement en deuxième année de <strong>BTS SISR (Solutions d'Infrastructure, Systèmes et Réseaux)</strong>. Mon parcours m'a permis de développer des compétences solides en administration systèmes, gestion de réseaux et cybersécurité.</p>
+                        <p>Doté d'une <strong>curiosité intellectuelle</strong> et d'une <strong>rigueur scientifique</strong>, je m'engage constamment à approfondir mes connaissances et à rester à jour des dernières innovations technologiques. Mon objectif est de contribuer efficacement à la sécurisation et à l'optimisation des infrastructures informatiques.</p>
+                        <div class="bio-highlight">
+                            <p><i class="fas fa-quote-left"></i> Passionné par les technologies, je suis constamment à la recherche de nouveaux défis pour améliorer mes compétences et apporter des solutions innovantes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="parcours" class="section-apropos">
+                <h2 class="section_titres"><i class="fas fa-graduation-cap"></i> Mon parcours</h2>
+                <div class="parcours-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024 - Présent</div>
+                        <div class="timeline-content">
+                            <h3>BTS SISR (Solutions d'Infrastructure, Systèmes et Réseaux)</h3>
+                            <p>Formation approfondie en administration des systèmes, gestion des réseaux et cybersécurité. Acquisition de compétences pratiques sur des équipements Cisco, Fortinet et environnements Windows/Linux.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - 2024</div>
+                        <div class="timeline-content">
+                            <h3>BAC STI2D (Sciences et Technologies de l'Industrie et du Développement Durable)</h3>
+                            <p>Spécialité Systèmes d'Information et Numérique. Acquisition des bases en programmation, réseaux et électronique.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025 (À venir)</div>
+                        <div class="timeline-content">
+                            <h3>Stage - BADR Algérie</h3>
+                            <p>Stage en entreprise prévu prochainement, permettant de mettre en pratique mes compétences en environnement professionnel.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="competences" class="section-apropos">
+                <h2 class="section_titres"><i class="fas fa-code"></i> Compétences techniques</h2>
+                <div class="competences-grid">
+                    <div class="categorie-competence">
+                        <h3><i class="fas fa-network-wired"></i> Réseaux</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">Cisco (Routing/Switching)</span>
+                            <span class="skill-badge">Fortinet</span>
+                            <span class="skill-badge">TCP/IP</span>
+                            <span class="skill-badge">VLAN</span>
+                            <span class="skill-badge">DHCP/DNS</span>
+                            <span class="skill-badge">VPN</span>
+                            <span class="skill-badge">SD-WAN</span>
+                        </div>
+                    </div>
+                    <div class="categorie-competence">
+                        <h3><i class="fas fa-server"></i> Systèmes</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">Windows Server</span>
+                            <span class="skill-badge">Linux (Debian/Ubuntu)</span>
+                            <span class="skill-badge">Active Directory</span>
+                            <span class="skill-badge">Virtualisation (VMware/VirtualBox)</span>
+                            <span class="skill-badge">Scripting (Bash/PowerShell)</span>
+                        </div>
+                    </div>
+                    <div class="categorie-competence">
+                        <h3><i class="fas fa-shield-alt"></i> Cybersécurité</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">Pare-feu (Fortinet)</span>
+                            <span class="skill-badge">Authentification</span>
+                            <span class="skill-badge">Chiffrement</span>
+                            <span class="skill-badge">Analyse de vulnérabilités</span>
+                            <span class="skill-badge">RGPD</span>
+                        </div>
+                    </div>
+                    <div class="categorie-competence">
+                        <h3><i class="fas fa-cloud"></i> Cloud & Outils</h3>
+                        <div class="skills-list">
+                            <span class="skill-badge">AWS (bases)</span>
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">Git</span>
+                            <span class="skill-badge">Ansible</span>
+                            <span class="skill-badge">Wireshark</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="langues" class="section-apropos">
+                <h2 class="section_titres"><i class="fas fa-language"></i> Langues</h2>
+                <div class="langues-grid">
+                    <div class="langue-card">
+                        <div class="langue-nom">Français</div>
+                        <p>Langue maternelle</p>
+                        <span class="langue-niveau">C2 - Courant</span>
+                    </div>
+                    <div class="langue-card">
+                        <div class="langue-nom">Anglais</div>
+                        <p>Niveau avancé</p>
+                        <span class="langue-niveau">B2/C1 - TOEIC</span>
+                    </div>
+                    <div class="langue-card">
+                        <div class="langue-nom">Espagnol</div>
+                        <p>Notions</p>
+                        <span class="langue-niveau">A2 - Débutant avancé</span>
+                    </div>
+                    <div class="langue-card">
+                        <div class="langue-nom">Arabe</div>
+                        <p>Langue d'origine</p>
+                        <span class="langue-niveau">B1 - Intermédiaire</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="interets" class="section-apropos">
+                <h2 class="section_titres"><i class="fas fa-heart"></i> Centres d'intérêt</h2>
+                <div class="interets-grid">
+                    <div class="interet-card"><i class="fas fa-robot"></i><h4>Nouvelles technologies</h4><p>Veille technologique et innovation</p></div>
+                    <div class="interet-card"><i class="fas fa-chess"></i><h4>Stratégie</h4><p>Résolution de problèmes complexes</p></div>
+                    <div class="interet-card"><i class="fas fa-plane"></i><h4>Voyages</h4><p>Découverte de nouvelles cultures</p></div>
+                    <div class="interet-card"><i class="fas fa-book"></i><h4>Lecture</h4><p>Romans et essais scientifiques</p></div>
+                    <div class="interet-card"><i class="fas fa-music"></i><h4>Musique</h4><p>Pratique instrumentale</p></div>
+                    <div class="interet-card"><i class="fas fa-hiking"></i><h4>Sport</h4><p>Randonnée et course à pied</p></div>
+                </div>
+            </section>
+
+            <section id="objectifs" class="section-apropos">
+                <h2 class="section_titres"><i class="fas fa-bullseye"></i> Mes objectifs</h2>
+                <div class="competences-grid">
+                    <div class="categorie-competence">
+                        <h3><i class="fas fa-short-term"></i> Court terme</h3>
+                        <ul style="margin-left: 20px; color: #2c3e50;">
+                            <li>Obtenir ma certification Fortinet NSE4</li>
+                            <li>Valider mon BTS SISR avec mention</li>
+                            <li>Effectuer un stage enrichissant en entreprise</li>
+                        </ul>
+                    </div>
+                    <div class="categorie-competence">
+                        <h3><i class="fas fa-long-term"></i> Long terme</h3>
+                        <ul style="margin-left: 20px; color: #2c3e50;">
+                            <li>Poursuivre en Bachelor puis Master en cybersécurité</li>
+                            <li>Devenir expert en infrastructure et sécurité</li>
+                            <li>Construire une carrière internationale</li>
+                        </ul>
+                    </div>
+                    <div class="categorie-competence">
+                        <h3><i class="fas fa-certificate"></i> Certifications visées</h3>
+                        <ul style="margin-left: 20px; color: #2c3e50;">
+                            <li>Fortinet NSE4</li>
+                            <li>Cisco CCNA</li>
+                            <li>Security+</li>
+                            <li>Certification ISO 27001</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-contenu">
+            <div class="footer-section">
+                <h3 class="footer-titre"><i class="fas fa-sitemap"></i> Navigation</h3>
+                <ul class="footer-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="apropos.html"><i class="fas fa-user"></i> À propos</a></li>
+                    <li><a href="btssisr.html"><i class="fas fa-graduation-cap"></i> BTS SISR</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-titre"><i class="fas fa-star"></i> Expertises</h3>
+                <ul class="footer-competences">
+                    <li><i class="fas fa-network-wired"></i> Réseaux Cisco & Fortinet</li>
+                    <li><i class="fas fa-shield-alt"></i> Sécurité informatique</li>
+                    <li><i class="fas fa-server"></i> Administration systèmes</li>
+                    <li><i class="fas fa-flask"></i> Rigueur scientifique</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-titre"><i class="fas fa-bullseye"></i> Objectifs 2025</h3>
+                <ul class="footer-certifications">
+                    <li><i class="fas fa-graduation-cap"></i> BTS SIO SISR</li>
+                    <li><i class="fas fa-certificate"></i> Stage BADR Algérie</li>
+                    <li><i class="fas fa-shield-alt"></i> Fortinet NSE4</li>
+                    <li><i class="fas fa-globe"></i> Carrière internationale</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bas">
+            <div class="reseaux-footer">
+                <a href="https://www.linkedin.com/in/bilal-rouane-311133340/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <img src="Images/LinkedIn_icon.svg" alt="LinkedIn" width="30">
+                </a>
+            </div>
+            <div class="copyright">
+                <p>© 2025 - Bilal Rouane - Tous droits réservés</p>
+                <p><i class="fas fa-envelope"></i> bilal.rouane.pro@gmail.com | <i class="fas fa-phone"></i> +33743290209</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === currentPage || (currentPage === '' && href === 'index.html') || (currentPage === 'apropos.html' && href === 'apropos.html')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
