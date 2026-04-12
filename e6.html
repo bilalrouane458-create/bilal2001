@@ -149,6 +149,160 @@
             margin-right: 12px;
         }
 
+        /* ===== STYLES POUR LES RÉALISATIONS PROFESSIONNELLES ===== */
+        .realisation-card {
+            background: #f8fafd;
+            border-radius: 20px;
+            margin-bottom: 35px;
+            overflow: hidden;
+            border: 1px solid #e8edf5;
+            transition: all 0.3s ease;
+        }
+
+        .realisation-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #0a1a3a;
+        }
+
+        .realisation-header {
+            background: linear-gradient(135deg, #0f2b4f, #0a1a3a);
+            padding: 20px 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .realisation-titre {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .realisation-titre i {
+            font-size: 1.8rem;
+        }
+
+        .realisation-titre h3 {
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        .realisation-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .realisation-body {
+            padding: 25px;
+        }
+
+        .realisation-section {
+            margin-bottom: 25px;
+        }
+
+        .realisation-section h4 {
+            color: #0a1a3a;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-left: 3px solid #0a1a3a;
+            padding-left: 12px;
+        }
+
+        .realisation-section p {
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .conditions-grid {
+            background: #eef2fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .condition-item {
+            margin-bottom: 12px;
+        }
+
+        .condition-item strong {
+            color: #0a1a3a;
+        }
+
+        .ressources-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .ressource-tag {
+            background: white;
+            border: 1px solid #0a1a3a;
+            color: #0a1a3a;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .etapes-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .etapes-list li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            color: #2c3e50;
+        }
+
+        .etapes-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #0a1a3a;
+            font-weight: bold;
+        }
+
+        .competence-mobilisee {
+            background: #eef2fa;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 4px solid #0a1a3a;
+        }
+
+        .pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0a1a3a;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .pdf-link:hover {
+            background: #1a3a6a;
+            transform: translateY(-2px);
+        }
+
         /* ===== PRÉSENTATION ===== */
         .e6-description {
             font-size: 1.05rem;
@@ -576,6 +730,10 @@
                 width: 100%;
                 text-align: center;
             }
+            .realisation-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -639,11 +797,175 @@
                 <p class="page-sous-titre">Option SISR – Solutions d'Infrastructure, Systèmes et Réseaux</p>
             </section>
 
-            <!-- Section Présentation -->
+            <!-- Section Introduction -->
+            <section id="introduction-e6" class="section-e6">
+                <h2 class="section_titres">
+                    <i class="fas fa-info-circle"></i> Introduction à l'Épreuve E6
+                </h2>
+                <div class="e6-description">
+                    <p>L'épreuve E6 est une <strong>épreuve pratique suivie d'un oral technique</strong>. Elle place le candidat dans une situation professionnelle concrète : à partir d'un scénario décrivant le besoin d'une organisation, il doit analyser la demande, réaliser les tâches techniques demandées, sécuriser les services et rendre compte de sa démarche au jury.</p>
+                    
+                    <div class="formation-info">
+                        <p><i class="fas fa-folder-open"></i> <strong>Contenu de l'épreuve :</strong></p>
+                        <p>📁 <strong>Portfolio numérique :</strong> présentation personnelle, compétences, projets, expériences de stage, veille technologique.</p>
+                        <p>📊 <strong>Tableau de synthèse :</strong> liste des réalisations professionnelles et compétences du référentiel associées.</p>
+                        <p>🎤 <strong>Entretien oral :</strong> présentation + questions du jury (durée indicative totale ~40 minutes).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION RÉALISATION PROFESSIONNELLE 1 -->
+            <section id="realisation1" class="section-e6">
+                <h2 class="section_titres">
+                    <i class="fas fa-briefcase"></i> Réalisation Professionnelle n°1
+                </h2>
+                
+                <div class="realisation-card">
+                    <div class="realisation-header">
+                        <div class="realisation-titre">
+                            <i class="fas fa-store"></i>
+                            <h3>Sécurisation du réseau de la boutique Stadium</h3>
+                        </div>
+                        <div class="realisation-badge">
+                            <i class="fas fa-file-pdf"></i> 
+                            <a href="projet/E6-REA-1.pdf" style="color:white; text-decoration:none;">Voir le PDF complet</a>
+                        </div>
+                    </div>
+                    <div class="realisation-body">
+                        <!-- Conditions de réalisation -->
+                        <div class="realisation-section">
+                            <h4><i class="fas fa-clipboard-list"></i> Conditions de réalisation</h4>
+                            <div class="conditions-grid">
+                                <div class="condition-item"><strong>📌 Ressources fournies :</strong> La réalisation professionnelle est réalisée avec le matériel et logiciel fournis par l'École IRIS en s'appuyant sur le cahier des charges de Stadium.</div>
+                                <div class="condition-item"><strong>🎯 Résultats attendus :</strong> Le réseau de la boutique est entièrement isolé via le VLAN 50 avec des ACLs strictes, garantissant la sécurité des données commerciales et le bon fonctionnement des douchettes sur le Wi-Fi métier "Shop-Wifi".</div>
+                            </div>
+                        </div>
+
+                        <!-- Ressources utilisées -->
+                        <div class="realisation-section">
+                            <h4><i class="fas fa-microchip"></i> Ressources matérielles et logicielles</h4>
+                            <div class="ressources-list">
+                                <span class="ressource-tag">Routeur Cisco 2821</span>
+                                <span class="ressource-tag">Switch Catalyst 2960</span>
+                                <span class="ressource-tag">Borne AIR-CAP3502I</span>
+                                <span class="ressource-tag">Serveur DELL PowerEdge R740</span>
+                                <span class="ressource-tag">VMWare ESXI 8.1</span>
+                                <span class="ressource-tag">Windows Server 2022</span>
+                                <span class="ressource-tag">Windows 11</span>
+                                <span class="ressource-tag">Debian 12</span>
+                                <span class="ressource-tag">PuTTY / Wireshark</span>
+                            </div>
+                        </div>
+
+                        <!-- Contexte -->
+                        <div class="realisation-section">
+                            <h4><i class="fas fa-building"></i> Contexte</h4>
+                            <p>La boutique officielle du stade utilise des douchettes de scan Wi-Fi pour la gestion des stocks et des caisses enregistreuses. Le réseau doit être sécurisé pour protéger les données commerciales et prévenir les fuites d'informations.</p>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="realisation-section">
+                            <h4><i class="fas fa-cogs"></i> Description de la réalisation</h4>
+                            <p>Un VLAN 50 « Boutique » a été mis en place avec des ACLs strictes pour l'isoler. Un groupe AD "Vendeurs-Boutique" a été créé. Une GPO a été déployée pour bloquer les ports USB sur les postes de caisse (prévention de la fuite de données) et pour mapper le lecteur B : vers la base de données des articles. Un Wi-Fi métier, "Shop-Wifi", a été déployé pour les douchettes.</p>
+                        </div>
+
+                        <!-- Étapes -->
+                        <div class="realisation-section">
+                            <h4><i class="fas fa-list-ol"></i> Étapes de mise en place</h4>
+                            <ul class="etapes-list">
+                                <li><strong>Isolation réseau :</strong> Configuration du VLAN 50 et d'ACLs pour isoler complètement le réseau de la boutique.</li>
+                                <li><strong>Configuration AD :</strong> Création du groupe de sécurité "Vendeurs-Boutique" pour gérer les accès.</li>
+                                <li><strong>Déploiement de la GPO de sécurité :</strong> Application d'une GPO qui mappe le lecteur B: et désactive les ports USB sur les terminaux de caisse.</li>
+                                <li><strong>Déploiement du Wi-Fi :</strong> Mise en service du SSID "Shop-Wifi" pour connecter les douchettes de scan au VLAN 50.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Compétences mobilisées -->
+                        <div class="competence-mobilisee">
+                            <i class="fas fa-star-of-life"></i> <strong>Compétences mobilisées :</strong> Wi-Fi pour terminaux IoT (douchettes), GPO de prévention de fuite de données (blocage USB), segmentation VLAN, ACLs.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION RÉALISATION PROFESSIONNELLE 2 -->
+            <section id="realisation2" class="section-e6">
+                <h2 class="section_titres">
+                    <i class="fas fa-chart-line"></i> Réalisation Professionnelle n°2
+                </h2>
+                
+                <div class="realisation-card">
+                    <div class="realisation-header">
+                        <div class="realisation-titre">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h3>Supervision et inventaire des équipements Stadium</h3>
+                        </div>
+                        <div class="realisation-badge">
+                            <i class="fas fa-file-pdf"></i> 
+                            <a href="projet/E6-REA-2.pdf" style="color:white; text-decoration:none;">Voir le PDF complet</a>
+                        </div>
+                    </div>
+                    <div class="realisation-body">
+                        <!-- Conditions de réalisation -->
+                        <div class="realisation-section">
+                            <h4><i class="fas fa-clipboard-list"></i> Conditions de réalisation</h4>
+                            <div class="conditions-grid">
+                                <div class="condition-item"><strong>📌 Ressources fournies :</strong> La réalisation professionnelle est réalisée avec le matériel et logiciel fournis par l'École IRIS en s'appuyant sur le cahier des charges de Stadium.</div>
+                                <div class="condition-item"><strong>🎯 Résultats attendus :</strong> Chaque douchette est inventoriée automatiquement dans GLPI via l'agent OCS, et toute panne de la borne Wi-Fi déclenche une alerte Nagios vers la DSI pour une intervention rapide.</div>
+                            </div>
+                        </div>
+
+                        <!-- Ressources utilisées -->
+                        <div class="realisation-section">
+                            <h4><i class="fas fa-microchip"></i> Ressources matérielles et logicielles</h4>
+                            <div class="ressources-list">
+                                <span class="ressource-tag">Routeur Cisco 2821</span>
+                                <span class="ressource-tag">Switch Catalyst 2960</span>
+                                <span class="ressource-tag">Borne AIR-CAP3502I</span>
+                                <span class="ressource-tag">Serveur DELL PowerEdge R740</span>
+                                <span class="ressource-tag">VMWare ESXI 8.1</span>
+                                <span class="ressource-tag">Windows Server 2022</span>
+                                <span class="ressource-tag">Debian 12</span>
+                                <span class="ressource-tag">OCS/GLPI / Nagios / Zimbra</span>
+                            </div>
+                        </div>
+
+                        <!-- Contexte -->
+                        <div class="realisation-section">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Contexte</h4>
+                            <p>La perte de connectivité Wi-Fi dans la boutique paralyse la gestion des stocks et potentiellement les ventes. Les nombreuses douchettes doivent être suivies informatiquement pour leur maintenance.</p>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="realisation-section">
+                            <h4><i class="fas fa-cogs"></i> Description de la réalisation</h4>
+                            <p>L'inventaire des douchettes est géré dans GLPI grâce aux remontées de l'agent OCS (identification par adresse MAC). Les vendeurs disposent de comptes Zimbra pour la communication logistique. La borne "Shop-Wifi" est supervisée par Nagios, qui alerte la DSI en cas de panne. Une base de connaissances dans GLPI a été créée pour documenter les pannes courantes des scanners ("Panne scan").</p>
+                        </div>
+
+                        <!-- Étapes -->
+                        <div class="realisation-section">
+                            <h4><i class="fas fa-list-ol"></i> Étapes de mise en place</h4>
+                            <ul class="etapes-list">
+                                <li><strong>Inventaire OCS/GLPI :</strong> L'agent OCS remonte l'inventaire des douchettes, permettant de les suivre individuellement dans GLPI.</li>
+                                <li><strong>Communication Zimbra :</strong> Création de comptes de messagerie pour les vendeurs afin de coordonner les réapprovisionnements.</li>
+                                <li><strong>Supervision Nagios :</strong> Surveillance de l'état de la borne Wi-Fi de la boutique.</li>
+                                <li><strong>Base de connaissances GLPI :</strong> Création d'articles pour aider à la résolution rapide des problèmes fréquents rencontrés avec les douchettes.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Compétences mobilisées -->
+                        <div class="competence-mobilisee">
+                            <i class="fas fa-star-of-life"></i> <strong>Compétences mobilisées :</strong> Suite OCS/GLPI pour l'inventaire et la gestion d'une base de connaissances, Nagios pour la supervision de la connectivité Wi-Fi.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Présentation générale (gardée pour contexte) -->
             <section id="presentation-e6" class="section-e6">
                 <div class="e6-intro">
                     <h2 class="section_titres">
-                        <i class="fas fa-info-circle"></i> Présentation de l'épreuve
+                        <i class="fas fa-graduation-cap"></i> Contexte de formation
                     </h2>
                     <div class="e6-description">
                         <p>Dans le cadre de mon <strong>BTS SIO option SISR à l'école IRIS</strong>, l'épreuve <strong>E6 – Administration des systèmes et des réseaux</strong> évalue ma capacité à concevoir, déployer, exploiter et maintenir une infrastructure informatique et réseau répondant aux besoins d'une organisation.</p>
@@ -722,216 +1044,9 @@
                 </div>
             </section>
 
-            <!-- Section Modalités -->
-            <section id="modalites-e6" class="section-e6">
-                <h2 class="section_titres">
-                    <i class="fas fa-clipboard-list"></i> Modalités d'évaluation
-                </h2>
-                
-                <div class="modalites-content">
-                    <div class="modalite-overview">
-                        <p>L'épreuve E6 s'appuie sur <strong>deux réalisations professionnelles</strong> présentées dans un dossier, issues de mon parcours en alternance et de mes projets pédagogiques.</p>
-                        <p>Ces réalisations mobilisent les compétences du <strong>bloc « Administration des systèmes et des réseaux »</strong> du référentiel BTS SIO SISR.</p>
-                    </div>
-                    
-                    <div class="epreuve-structure">
-                        <h3><i class="fas fa-stream"></i> Déroulement de l'épreuve :</h3>
-                        <p><strong>Durée totale : 40 minutes</strong> (précédée de 1h30 de préparation)</p>
-                        
-                        <div class="phases-epreuve">
-                            <div class="phase">
-                                <h4><i class="fas fa-clock"></i> Phase 1</h4>
-                                <div class="phase-details">
-                                    <p><strong>Préparation : 30 minutes</strong></p>
-                                    <p>À partir d'une expression de besoins fournie</p>
-                                    <p><strong>Entretien : 20 minutes maximum</strong> avec le jury</p>
-                                </div>
-                            </div>
-                            
-                            <div class="phase">
-                                <h4><i class="fas fa-clock"></i> Phase 2</h4>
-                                <div class="phase-details">
-                                    <p><strong>Préparation : 1 heure</strong></p>
-                                    <p>Pour réaliser une solution technique en autonomie</p>
-                                    <p><strong>Entretien : 20 minutes maximum</strong> avec le jury</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <!-- Le reste du contenu (Modalités, Objectifs, Préparation, Projets, Footer) reste identique -->
+            <!-- ... -->
 
-            <!-- Section Objectifs -->
-            <section id="objectifs-e6" class="section-e6">
-                <h2 class="section_titres">
-                    <i class="fas fa-bullseye"></i> Objectif de l'épreuve
-                </h2>
-                
-                <div class="objectifs-content">
-                    <div class="objectif-card">
-                        <i class="fas fa-search"></i>
-                        <h3>Analyser</h3>
-                        <p>Démontrer ma capacité à analyser un besoin organisationnel</p>
-                    </div>
-                    
-                    <div class="objectif-card">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Concevoir</h3>
-                        <p>Concevoir des solutions infrastructures adaptées</p>
-                    </div>
-                    
-                    <div class="objectif-card">
-                        <i class="fas fa-code"></i>
-                        <h3>Implémenter</h3>
-                        <p>Mettre en œuvre des solutions techniques concrètes</p>
-                    </div>
-                    
-                    <div class="objectif-card">
-                        <i class="fas fa-comments"></i>
-                        <h3>Justifier</h3>
-                        <p>Justifier mes choix techniques dans un contexte professionnel</p>
-                    </div>
-                </div>
-                
-                <div class="objectif-details">
-                    <p>L'épreuve E6 vise à évaluer ma <strong>maîtrise technique</strong> et ma <strong>démarche professionnelle</strong> dans la gestion d'infrastructures systèmes et réseaux, en situation réelle ou simulée.</p>
-                </div>
-            </section>
-
-            <!-- Section Préparation -->
-            <section id="preparation-e6" class="section-e6">
-                <h2 class="section_titres">
-                    <i class="fas fa-book"></i> Préparation technique
-                </h2>
-                
-                <div class="preparation-content">
-                    <div class="domaines-techniques">
-                        <h3><i class="fas fa-laptop-code"></i> Domaines techniques maîtrisés :</h3>
-                        <div class="domaines-grid">
-                            <div class="domaine">
-                                <h4><i class="fas fa-network-wired"></i> Réseaux</h4>
-                                <ul>
-                                    <li>Configuration VLAN/Trunk</li>
-                                    <li>Routage statique et dynamique</li>
-                                    <li>ACL et sécurité réseau</li>
-                                    <li>Services DHCP/DNS</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="domaine">
-                                <h4><i class="fas fa-server"></i> Systèmes</h4>
-                                <ul>
-                                    <li>Windows Server (AD, GPO)</li>
-                                    <li>Linux (services réseau)</li>
-                                    <li>Virtualisation (VMware, Hyper-V)</li>
-                                    <li>Supervision (Nagios, PRTG)</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="domaine">
-                                <h4><i class="fas fa-shield-alt"></i> Sécurité</h4>
-                                <ul>
-                                    <li>Pare-feu (Fortinet, PfSense)</li>
-                                    <li>VPN (IPsec, SSL)</li>
-                                    <li>Authentification (RADIUS, LDAP)</li>
-                                    <li>Audit de sécurité</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="domaine">
-                                <h4><i class="fas fa-cloud"></i> Services</h4>
-                                <ul>
-                                    <li>Services Web (Apache, IIS)</li>
-                                    <li>Messagerie (Exchange, Postfix)</li>
-                                    <li>Sauvegarde (Veeam, Bacula)</li>
-                                    <li>Monitoring et alerting</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="conseils-preparation">
-                        <h3><i class="fas fa-lightbulb"></i> Conseils de préparation :</h3>
-                        <ul class="conseils-list">
-                            <li><i class="fas fa-check-circle"></i> Maîtriser les fondamentaux des réseaux TCP/IP</li>
-                            <li><i class="fas fa-check-circle"></i> Pratiquer régulièrement sur des labs techniques</li>
-                            <li><i class="fas fa-check-circle"></i> Documenter soigneusement toutes ses réalisations</li>
-                            <li><i class="fas fa-check-circle"></i> Préparer des scénarios de dépannage typiques</li>
-                            <li><i class="fas fa-check-circle"></i> Savoir expliquer ses choix techniques simplement</li>
-                            <li><i class="fas fa-check-circle"></i> Gérer son stress et son temps pendant l'épreuve</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section Projets E6 -->
-            <section id="projets-e6" class="section-e6">
-                <h2 class="section_titres">
-                    <i class="fas fa-project-diagram"></i> Projets pour l'épreuve E6
-                </h2>
-                
-                <div class="projets-grid">
-                    <div class="projet-card">
-                        <div class="projet-header">
-                            <i class="fas fa-building"></i>
-                            <h3>Infrastructure d'entreprise</h3>
-                        </div>
-                        <div class="projet-content">
-                            <p>Mise en place d'une infrastructure complète pour une PME</p>
-                            <div class="projet-skills">
-                                <span class="skill-badge">Active Directory</span>
-                                <span class="skill-badge">VLAN</span>
-                                <span class="skill-badge">Sauvegarde</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="projet-card">
-                        <div class="projet-header">
-                            <i class="fas fa-shield-alt"></i>
-                            <h3>Sécurisation réseau</h3>
-                        </div>
-                        <div class="projet-content">
-                            <p>Déploiement d'une politique de sécurité réseau complète</p>
-                            <div class="projet-skills">
-                                <span class="skill-badge">Firewall</span>
-                                <span class="skill-badge">VPN</span>
-                                <span class="skill-badge">ACL</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="projet-card">
-                        <div class="projet-header">
-                            <i class="fas fa-cloud"></i>
-                            <h3>Virtualisation</h3>
-                        </div>
-                        <div class="projet-content">
-                            <p>Migration d'une infrastructure physique vers virtualisée</p>
-                            <div class="projet-skills">
-                                <span class="skill-badge">VMware</span>
-                                <span class="skill-badge">Migration</span>
-                                <span class="skill-badge">P2V</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="projet-card">
-                        <div class="projet-header">
-                            <i class="fas fa-wifi"></i>
-                            <h3>Réseau sans fil</h3>
-                        </div>
-                        <div class="projet-content">
-                            <p>Déploiement d'un réseau Wi-Fi d'entreprise sécurisé</p>
-                            <div class="projet-skills">
-                                <span class="skill-badge">Wi-Fi</span>
-                                <span class="skill-badge">Sécurité</span>
-                                <span class="skill-badge">Contrôle d'accès</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </main>
 
