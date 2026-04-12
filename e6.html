@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <title>Épreuve E6 - Bilal Rouane</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Épreuve E6 - Réalisations | Bilal Rouane</title>
+    <meta name="description" content="Épreuve E6 - Administration des systèmes et des réseaux">
     
-    <!-- Police Roboto -->
+    <!-- Import de la police ROBOTO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="Images/Photo pro.jpeg">
+    
+    <!-- Font Awesome pour icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* ===== STYLES GÉNÉRAUX ===== */
         * {
             margin: 0;
             padding: 0;
@@ -22,13 +28,23 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #f0f2f8 0%, #e8ecf5 100%);
+            background-color: #f0f2f8;
             color: #1a2a3a;
             line-height: 1.5;
+        }
+
+        .fond {
+            background: linear-gradient(135deg, #f0f2f8 0%, #e8ecf5 100%);
             min-height: 100vh;
         }
 
-        /* ===== HEADER & NAVIGATION (identique à l'accueil) ===== */
+        .contenu {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
         header {
             background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -68,27 +84,24 @@
             transform: translateY(-2px);
         }
 
-        /* Signature à gauche - couleur blanche */
+        .nav-link.active {
+            background: #0a1a3a;
+            color: white;
+            border-radius: 30px;
+        }
+
         .logo img {
             height: 45px;
             vertical-align: middle;
-            filter: brightness(0) invert(1); /* Rend la signature blanche */
         }
 
-        /* ===== CONTENU PRINCIPAL ===== */
-        .contenu {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Bannière Épreuve E6 */
+        /* ===== BANNIÈRE BLEU FONCÉ - TEXTE BLANC ===== */
         #titre-e6 {
             text-align: center;
             margin-bottom: 50px;
             padding: 50px 30px;
             background: #0a1a3a;
-            background: linear-gradient(135deg, #0a1a3a 0%, #0f2a4a 100%);
+            background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
             border-radius: 25px;
             color: white;
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
@@ -108,7 +121,7 @@
             color: white;
         }
 
-        /* Sections générales */
+        /* ===== SECTIONS ===== */
         .section-e6 {
             background: white;
             border-radius: 25px;
@@ -136,171 +149,80 @@
             margin-right: 12px;
         }
 
-        /* ===== BANDEAU TÉLÉCHARGEMENT PDF EN TÊTE ===== */
-        .pdf-download-band {
-            background: linear-gradient(135deg, #f8fafd 0%, #ffffff 100%);
-            border-radius: 20px;
-            padding: 20px 30px;
-            margin-bottom: 35px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            border: 1px solid #dce5ef;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        /* ===== PRÉSENTATION ===== */
+        .e6-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #1e2e3e;
         }
 
-        .pdf-download-band .pdf-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
+        .e6-description p {
+            margin-bottom: 18px;
         }
 
-        .pdf-download-band .pdf-icon {
-            background: #0a1a3a;
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
+        .formation-info {
+            background: #eef2fa;
+            border-left: 5px solid #0a1a3a;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-top: 20px;
         }
 
-        .pdf-download-band .pdf-text h3 {
+        .formation-info i {
             color: #0a1a3a;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+            margin-right: 10px;
         }
 
-        .pdf-download-band .pdf-text p {
-            color: #4a627a;
-            font-size: 0.85rem;
-        }
-
-        .pdf-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn-pdf {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #0a1a3a;
-            color: white;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.25s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-pdf i {
-            font-size: 1.1rem;
-        }
-
-        .btn-pdf:hover {
-            background: #1f3a5c;
-            transform: translateY(-2px);
-            gap: 14px;
-        }
-
-        /* Cartes réalisations */
-        .realisation-card {
-            background: #f8fafd;
-            border-radius: 20px;
-            margin-bottom: 45px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-        }
-
-        .realisation-card:last-child {
-            margin-bottom: 0;
-        }
-
-        .realisation-header {
-            background: linear-gradient(135deg, #0a1a3a, #14345c);
-            padding: 25px 30px;
-            color: white;
-        }
-
-        .realisation-header h2 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .realisation-header h2 i {
-            font-size: 2rem;
-        }
-
-        .realisation-subtitle {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-
-        .realisation-body {
-            padding: 30px;
-        }
-
-        /* Grille info */
-        .info-grid {
+        /* ===== COMPÉTENCES ===== */
+        .competences-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            margin-bottom: 30px;
         }
 
-        .info-box {
-            background: white;
-            border-radius: 16px;
+        .competence-category {
+            background: #f8fafd;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e8edf5;
+        }
+
+        .competence-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #0a1a3a;
+        }
+
+        .competence-header {
+            background: linear-gradient(135deg, #0a1a3a, #0a1a3a);
             padding: 20px;
-            border-left: 4px solid #0a1a3a;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            text-align: center;
+            color: white;
         }
 
-        .info-box h3 {
-            color: #0a1a3a;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .competence-header i {
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
 
-        .info-box h3 i {
-            color: #0a1a3a;
-            font-size: 1.2rem;
+        .competence-header h3 {
+            font-size: 1.3rem;
         }
 
-        .info-box p, .info-box li {
-            color: #2c3e50;
-            line-height: 1.6;
-        }
-
-        .info-box ul {
+        .competence-list {
             list-style: none;
-            padding-left: 0;
+            padding: 20px;
         }
 
-        .info-box li {
-            padding: 6px 0;
-            padding-left: 20px;
+        .competence-list li {
+            padding: 8px 0;
+            padding-left: 25px;
             position: relative;
+            color: #2c3e50;
         }
 
-        .info-box li::before {
+        .competence-list li::before {
             content: "▹";
             position: absolute;
             left: 0;
@@ -308,87 +230,266 @@
             font-weight: bold;
         }
 
-        /* Étapes */
-        .etapes-list {
-            background: #f1f5f9;
-            border-radius: 16px;
-            padding: 20px 25px;
-            margin: 20px 0;
+        /* ===== MODALITÉS ===== */
+        .modalites-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
-        .etapes-list h3 {
+        .modalite-overview p {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .epreuve-structure {
+            background: #f8fafd;
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid #e8edf5;
+        }
+
+        .epreuve-structure h3 {
             color: #0a1a3a;
             margin-bottom: 15px;
+        }
+
+        .phases-epreuve {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .phases-epreuve {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .phase {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            border-left: 4px solid #0a1a3a;
+        }
+
+        .phase h4 {
+            color: #0a1a3a;
+            margin-bottom: 12px;
+        }
+
+        .phase-details p {
+            margin-bottom: 8px;
+            color: #4a627a;
+        }
+
+        /* ===== OBJECTIFS ===== */
+        .objectifs-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .objectif-card {
+            background: #f8fafd;
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e8edf5;
+        }
+
+        .objectif-card:hover {
+            transform: translateY(-5px);
+            border-color: #0a1a3a;
+        }
+
+        .objectif-card i {
+            font-size: 2.5rem;
+            color: #0a1a3a;
+            margin-bottom: 15px;
+        }
+
+        .objectif-card h3 {
+            color: #0a1a3a;
+            margin-bottom: 10px;
+        }
+
+        .objectif-card p {
+            color: #4a627a;
+        }
+
+        .objectif-details {
+            background: #eef2fa;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border-left: 5px solid #0a1a3a;
+        }
+
+        .objectif-details p {
+            color: #1e2e3e;
+            font-size: 1.05rem;
+        }
+
+        /* ===== PRÉPARATION ===== */
+        .preparation-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .preparation-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .domaines-techniques h3, .conseils-preparation h3 {
+            color: #0a1a3a;
+            margin-bottom: 20px;
+        }
+
+        .domaines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .domaine {
+            background: #f8fafd;
+            border-radius: 15px;
+            padding: 18px;
+            border: 1px solid #e8edf5;
+        }
+
+        .domaine h4 {
+            color: #0a1a3a;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .etapes-list ol {
-            padding-left: 25px;
+        .domaine h4 i {
+            color: #0a1a3a;
         }
 
-        .etapes-list li {
-            margin: 12px 0;
+        .domaine ul {
+            list-style: none;
+            padding-left: 5px;
+        }
+
+        .domaine ul li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #4a627a;
+        }
+
+        .domaine ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0a1a3a;
+            font-weight: bold;
+        }
+
+        .conseils-preparation {
+            background: #f8fafd;
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid #e8edf5;
+        }
+
+        .conseils-list {
+            list-style: none;
+        }
+
+        .conseils-list li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
             color: #2c3e50;
         }
 
-        /* Compétences mobilisées */
-        .skills-container {
+        .conseils-list li i {
+            color: #0a1a3a;
+            font-size: 1.1rem;
+        }
+
+        /* ===== PROJETS ===== */
+        .projets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .projet-card {
+            background: #f8fafd;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e8edf5;
+        }
+
+        .projet-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #0a1a3a;
+        }
+
+        .projet-header {
+            background: linear-gradient(135deg, #0a1a3a, #0a1a3a);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .projet-header i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .projet-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .projet-content {
+            padding: 20px;
+        }
+
+        .projet-content p {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .projet-skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 15px;
+            gap: 8px;
         }
 
         .skill-badge {
-            background: #e8edf5;
+            background: white;
             color: #0a1a3a;
-            padding: 6px 14px;
-            border-radius: 25px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid #cbd5e1;
-            transition: all 0.2s;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            border: 1px solid #0a1a3a;
+            transition: all 0.3s ease;
         }
 
         .skill-badge:hover {
             background: #0a1a3a;
             color: white;
-            border-color: #0a1a3a;
         }
 
-        /* Ressources matérielles/logicielles */
-        .resources-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .resources-col {
-            flex: 1;
-            min-width: 200px;
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 15px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .resources-col h4 {
-            color: #0a1a3a;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .resources-col p {
-            font-size: 0.85rem;
-            color: #4a627a;
-        }
-
-        /* Pied de page */
+        /* ===== FOOTER ===== */
         footer {
             background: linear-gradient(135deg, #0a1a3a, #0a1222);
             color: #e0e7ff;
@@ -455,6 +556,7 @@
             margin: 5px 0;
         }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .page-titre {
                 font-size: 1.8rem;
@@ -469,243 +571,364 @@
                 flex-direction: column;
                 gap: 8px;
             }
-            .realisation-header h2 {
-                font-size: 1.3rem;
-                flex-wrap: wrap;
-            }
-            .pdf-download-band {
-                flex-direction: column;
+            .menu li a {
+                display: block;
+                width: 100%;
                 text-align: center;
-            }
-            .pdf-buttons {
-                justify-content: center;
             }
         }
     </style>
 </head>
-<body>
+<body class="fond">
 
-    <!-- ===== HEADER AVEC SIGNATURE BLANCHE À GAUCHE ===== -->
-   <header>
-    <nav id="navigation" aria-label="Navigation principale">
-        <ul class="menu">
-            <li class="logo">
-                <img src="Images/signature.png" id="signature" alt="Signature Bilal Rouane">
-            </li>
-            <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
-            <li><a href="apropos.html" class="nav-link"><i class="fas fa-user"></i> À propos</a></li>
-            <li><a href="btssisr.html" class="nav-link"><i class="fas fa-graduation-cap"></i> BTS SISR</a></li>
-            <li><a href="e5.html" class="nav-link"><i class="fas fa-tasks"></i> Épreuve E5</a></li>
-            <li><a href="e6.html" class="nav-link active"><i class="fas fa-server"></i> Épreuve E6</a></li>
-            <li><a href="veille.html" class="nav-link"><i class="fas fa-binoculars"></i> Veille</a></li>
-            <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <nav id="navigation" aria-label="Navigation principale">
+            <ul class="menu">
+                <li class="logo">
+                    <img src="Images/signature.png" id="signature" alt="Signature Bilal Rouane">
+                </li>
+                <li>
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Accueil
+                    </a>
+                </li>
+                <li>
+                    <a href="apropos.html" class="nav-link">
+                        <i class="fas fa-user"></i> À propos
+                    </a>
+                </li>
+                <li>
+                    <a href="btssisr.html" class="nav-link">
+                        <i class="fas fa-graduation-cap"></i> BTS SISR
+                    </a>
+                </li>
+                <li>
+                    <a href="e5.html" class="nav-link">
+                        <i class="fas fa-tasks"></i> Épreuve E5
+                    </a>
+                </li>
+                <li>
+                    <a href="e6.html" class="nav-link active">
+                        <i class="fas fa-server"></i> Épreuve E6
+                    </a>
+                </li>
+                <li>
+                    <a href="veille.html" class="nav-link">
+                        <i class="fas fa-binoculars"></i> Veille
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="nav-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <span id="saut_separateur"></span>
+    </header>
 
+    <!-- ===== CONTENU ÉPREUVE E6 ===== -->
     <main>
         <div class="contenu">
-            <!-- Bannière -->
+            <span id="saut_menu"></span>
+            
+            <!-- Section Titre - BANNIÈRE BLEU FONCÉ -->
             <section id="titre-e6">
                 <h1 class="page-titre">Épreuve E6 – Administration des systèmes et des réseaux</h1>
                 <p class="page-sous-titre">Option SISR – Solutions d'Infrastructure, Systèmes et Réseaux</p>
-                <p class="page-sous-titre" style="margin-top: 10px;">Mes deux réalisations professionnelles en contexte Stadium</p>
             </section>
 
-            <!-- ===== BANDEAU TÉLÉCHARGEMENT PDF AVEC OUVERTURE NOUVEL ONGLET ===== -->
-            <div class="pdf-download-band">
-                <div class="pdf-info">
-                    <div class="pdf-icon">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <div class="pdf-text">
-                        <h3><i class="fas fa-download"></i> Documents complets des réalisations E6</h3>
-                        <p>Cliquez sur les boutons pour ouvrir les PDF dans un nouvel onglet</p>
-                    </div>
-                </div>
-                <div class="pdf-buttons">
-                    <a href="projet/E6-REA-1.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-file-pdf"></i> Réalisation 1
-                    </a>
-                    <a href="projet/E6-REA-2.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-file-pdf"></i> Réalisation 2
-                    </a>
-                </div>
-            </div>
-
-            <!-- ==================== RÉALISATION N°1 ==================== -->
-            <section class="section-e6">
-                <h2 class="section_titres">
-                    <i class="fas fa-network-wired"></i> Réalisation n°1 – Isolation et sécurisation du réseau boutique
-                </h2>
-
-                <div class="realisation-card">
-                    <div class="realisation-header">
-                        <h2><i class="fas fa-shield-alt"></i> VLAN 50 & Sécurité des douchettes Wi-Fi</h2>
-                        <div class="realisation-subtitle">Contexte : Stadium – Boutique officielle du stade | Mise en place d’un réseau isolé pour les caisses et scanners</div>
-                    </div>
-                    <div class="realisation-body">
-                        <!-- Lien PDF ouverture nouvel onglet -->
-                        <div style="margin-bottom: 20px; text-align: right;">
-                            <a href="projet/E6-REA-1.pdf" target="_blank" rel="noopener noreferrer" style="background: #0a1a3a10; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; color:#0a1a3a; text-decoration:none;">
-                                <i class="fas fa-external-link-alt"></i> Ouvrir Réalisation 1 (PDF)
-                            </a>
+            <!-- Section Présentation -->
+            <section id="presentation-e6" class="section-e6">
+                <div class="e6-intro">
+                    <h2 class="section_titres">
+                        <i class="fas fa-info-circle"></i> Présentation de l'épreuve
+                    </h2>
+                    <div class="e6-description">
+                        <p>Dans le cadre de mon <strong>BTS SIO option SISR à l'école IRIS</strong>, l'épreuve <strong>E6 – Administration des systèmes et des réseaux</strong> évalue ma capacité à concevoir, déployer, exploiter et maintenir une infrastructure informatique et réseau répondant aux besoins d'une organisation.</p>
+                        
+                        <p>Cette épreuve est spécifiquement orientée vers les <strong>infrastructures systèmes et réseaux</strong>, cœur du métier d'administrateur systèmes et réseaux.</p>
+                        
+                        <div class="formation-info">
+                            <p><i class="fas fa-graduation-cap"></i> <strong>Formation :</strong> BTS SIO – École IRIS</p>
                         </div>
-                        <!-- Conditions / Résultats -->
-                        <div class="info-grid">
-                            <div class="info-box">
-                                <h3><i class="fas fa-clipboard-list"></i> Conditions de réalisation</h3>
-                                <p><strong>Ressources fournies :</strong> Matériel et logiciel fournis par l’école IRIS, cahier des charges Stadium.</p>
-                                <p><strong>Résultats attendus :</strong> Réseau de la boutique entièrement isolé via VLAN 50 avec ACLs strictes, garantissant la sécurité des données commerciales et le bon fonctionnement des douchettes sur le Wi-Fi métier "Shop-Wifi".</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Compétences Évaluées -->
+            <section id="competences-e6" class="section-e6">
+                <h2 class="section_titres">
+                    <i class="fas fa-check-circle"></i> Compétences évaluées
+                </h2>
+                
+                <div class="competences-grid">
+                    <div class="competence-category">
+                        <div class="competence-header">
+                            <i class="fas fa-drafting-compass"></i>
+                            <h3>Conception</h3>
+                        </div>
+                        <ul class="competence-list">
+                            <li>Conception d'une solution d'infrastructure réseau</li>
+                            <li>Analyse des besoins techniques d'une organisation</li>
+                            <li>Choix des technologies adaptées</li>
+                            <li>Architecture des solutions</li>
+                            <li>Planification des déploiements</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="competence-category">
+                        <div class="competence-header">
+                            <i class="fas fa-rocket"></i>
+                            <h3>Déploiement</h3>
+                        </div>
+                        <ul class="competence-list">
+                            <li>Installation, test et déploiement de solutions</li>
+                            <li>Configuration des équipements et services</li>
+                            <li>Mise en production des infrastructures</li>
+                            <li>Tests de validation</li>
+                            <li>Documentation technique</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="competence-category">
+                        <div class="competence-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>Exploitation</h3>
+                        </div>
+                        <ul class="competence-list">
+                            <li>Exploitation, dépannage et supervision</li>
+                            <li>Maintenance des infrastructures</li>
+                            <li>Optimisation des performances</li>
+                            <li>Gestion des incidents</li>
+                            <li>Surveillance des systèmes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="competence-category">
+                        <div class="competence-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Sécurité</h3>
+                        </div>
+                        <ul class="competence-list">
+                            <li>Mise en œuvre de solutions fiables et sécurisées</li>
+                            <li>Protection des infrastructures</li>
+                            <li>Respect des politiques de sécurité</li>
+                            <li>Sécurisation des communications</li>
+                            <li>Gestion des accès</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Modalités -->
+            <section id="modalites-e6" class="section-e6">
+                <h2 class="section_titres">
+                    <i class="fas fa-clipboard-list"></i> Modalités d'évaluation
+                </h2>
+                
+                <div class="modalites-content">
+                    <div class="modalite-overview">
+                        <p>L'épreuve E6 s'appuie sur <strong>deux réalisations professionnelles</strong> présentées dans un dossier, issues de mon parcours en alternance et de mes projets pédagogiques.</p>
+                        <p>Ces réalisations mobilisent les compétences du <strong>bloc « Administration des systèmes et des réseaux »</strong> du référentiel BTS SIO SISR.</p>
+                    </div>
+                    
+                    <div class="epreuve-structure">
+                        <h3><i class="fas fa-stream"></i> Déroulement de l'épreuve :</h3>
+                        <p><strong>Durée totale : 40 minutes</strong> (précédée de 1h30 de préparation)</p>
+                        
+                        <div class="phases-epreuve">
+                            <div class="phase">
+                                <h4><i class="fas fa-clock"></i> Phase 1</h4>
+                                <div class="phase-details">
+                                    <p><strong>Préparation : 30 minutes</strong></p>
+                                    <p>À partir d'une expression de besoins fournie</p>
+                                    <p><strong>Entretien : 20 minutes maximum</strong> avec le jury</p>
+                                </div>
                             </div>
-                            <div class="info-box">
-                                <h3><i class="fas fa-microchip"></i> Ressources matérielles & logicielles</h3>
-                                <div class="resources-row">
-                                    <div class="resources-col">
-                                        <h4>Matériel</h4>
-                                        <p>Routeur Cisco 2821, Switch Catalyst 2960, Borne WiFi AIR-CAP3502I, Serveur DELL PowerEdge R740</p>
-                                    </div>
-                                    <div class="resources-col">
-                                        <h4>Logiciels</h4>
-                                        <p>VMWare vSphere ESXi 8.1, Windows Server 2022, Windows 11, Debian 12, OCS/GLPI, Zimbra, Snort, PuTTY, Wireshark</p>
-                                    </div>
+                            
+                            <div class="phase">
+                                <h4><i class="fas fa-clock"></i> Phase 2</h4>
+                                <div class="phase-details">
+                                    <p><strong>Préparation : 1 heure</strong></p>
+                                    <p>Pour réaliser une solution technique en autonomie</p>
+                                    <p><strong>Entretien : 20 minutes maximum</strong> avec le jury</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
 
-                        <!-- Description complète -->
-                        <div class="info-box" style="margin-bottom: 20px;">
-                            <h3><i class="fas fa-info-circle"></i> Description de la réalisation</h3>
-                            <p>Un VLAN 50 « Boutique » a été mis en place avec des ACLs strictes pour l'isoler. Un groupe Active Directory "Vendeurs-Boutique" a été créé. Une GPO a été déployée pour bloquer les ports USB sur les postes de caisse (prévention de fuite de données) et pour mapper le lecteur B : vers la base de données des articles. Un Wi-Fi métier "Shop-Wifi" a été déployé pour les douchettes.</p>
+            <!-- Section Objectifs -->
+            <section id="objectifs-e6" class="section-e6">
+                <h2 class="section_titres">
+                    <i class="fas fa-bullseye"></i> Objectif de l'épreuve
+                </h2>
+                
+                <div class="objectifs-content">
+                    <div class="objectif-card">
+                        <i class="fas fa-search"></i>
+                        <h3>Analyser</h3>
+                        <p>Démontrer ma capacité à analyser un besoin organisationnel</p>
+                    </div>
+                    
+                    <div class="objectif-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Concevoir</h3>
+                        <p>Concevoir des solutions infrastructures adaptées</p>
+                    </div>
+                    
+                    <div class="objectif-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Implémenter</h3>
+                        <p>Mettre en œuvre des solutions techniques concrètes</p>
+                    </div>
+                    
+                    <div class="objectif-card">
+                        <i class="fas fa-comments"></i>
+                        <h3>Justifier</h3>
+                        <p>Justifier mes choix techniques dans un contexte professionnel</p>
+                    </div>
+                </div>
+                
+                <div class="objectif-details">
+                    <p>L'épreuve E6 vise à évaluer ma <strong>maîtrise technique</strong> et ma <strong>démarche professionnelle</strong> dans la gestion d'infrastructures systèmes et réseaux, en situation réelle ou simulée.</p>
+                </div>
+            </section>
+
+            <!-- Section Préparation -->
+            <section id="preparation-e6" class="section-e6">
+                <h2 class="section_titres">
+                    <i class="fas fa-book"></i> Préparation technique
+                </h2>
+                
+                <div class="preparation-content">
+                    <div class="domaines-techniques">
+                        <h3><i class="fas fa-laptop-code"></i> Domaines techniques maîtrisés :</h3>
+                        <div class="domaines-grid">
+                            <div class="domaine">
+                                <h4><i class="fas fa-network-wired"></i> Réseaux</h4>
+                                <ul>
+                                    <li>Configuration VLAN/Trunk</li>
+                                    <li>Routage statique et dynamique</li>
+                                    <li>ACL et sécurité réseau</li>
+                                    <li>Services DHCP/DNS</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="domaine">
+                                <h4><i class="fas fa-server"></i> Systèmes</h4>
+                                <ul>
+                                    <li>Windows Server (AD, GPO)</li>
+                                    <li>Linux (services réseau)</li>
+                                    <li>Virtualisation (VMware, Hyper-V)</li>
+                                    <li>Supervision (Nagios, PRTG)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="domaine">
+                                <h4><i class="fas fa-shield-alt"></i> Sécurité</h4>
+                                <ul>
+                                    <li>Pare-feu (Fortinet, PfSense)</li>
+                                    <li>VPN (IPsec, SSL)</li>
+                                    <li>Authentification (RADIUS, LDAP)</li>
+                                    <li>Audit de sécurité</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="domaine">
+                                <h4><i class="fas fa-cloud"></i> Services</h4>
+                                <ul>
+                                    <li>Services Web (Apache, IIS)</li>
+                                    <li>Messagerie (Exchange, Postfix)</li>
+                                    <li>Sauvegarde (Veeam, Bacula)</li>
+                                    <li>Monitoring et alerting</li>
+                                </ul>
+                            </div>
                         </div>
+                    </div>
+                    
+                    <div class="conseils-preparation">
+                        <h3><i class="fas fa-lightbulb"></i> Conseils de préparation :</h3>
+                        <ul class="conseils-list">
+                            <li><i class="fas fa-check-circle"></i> Maîtriser les fondamentaux des réseaux TCP/IP</li>
+                            <li><i class="fas fa-check-circle"></i> Pratiquer régulièrement sur des labs techniques</li>
+                            <li><i class="fas fa-check-circle"></i> Documenter soigneusement toutes ses réalisations</li>
+                            <li><i class="fas fa-check-circle"></i> Préparer des scénarios de dépannage typiques</li>
+                            <li><i class="fas fa-check-circle"></i> Savoir expliquer ses choix techniques simplement</li>
+                            <li><i class="fas fa-check-circle"></i> Gérer son stress et son temps pendant l'épreuve</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-                        <!-- Étapes -->
-                        <div class="etapes-list">
-                            <h3><i class="fas fa-list-ol"></i> Étapes de la mise en place</h3>
-                            <ol>
-                                <li><strong>Isolation réseau :</strong> Configuration du VLAN 50 et d'ACLs pour isoler complètement le réseau de la boutique.</li>
-                                <li><strong>Configuration AD :</strong> Création du groupe de sécurité "Vendeurs-Boutique" pour gérer les accès.</li>
-                                <li><strong>Déploiement de la GPO de sécurité :</strong> Application d'une GPO qui mappe le lecteur B: et désactive les ports USB sur les terminaux de caisse.</li>
-                                <li><strong>Déploiement du Wi-Fi :</strong> Mise en service du SSID "Shop-Wifi" pour connecter les douchettes de scan au VLAN 50.</li>
-                            </ol>
+            <!-- Section Projets E6 -->
+            <section id="projets-e6" class="section-e6">
+                <h2 class="section_titres">
+                    <i class="fas fa-project-diagram"></i> Projets pour l'épreuve E6
+                </h2>
+                
+                <div class="projets-grid">
+                    <div class="projet-card">
+                        <div class="projet-header">
+                            <i class="fas fa-building"></i>
+                            <h3>Infrastructure d'entreprise</h3>
                         </div>
-
-                        <!-- Compétences -->
-                        <div class="info-box">
-                            <h3><i class="fas fa-code-branch"></i> Compétences mobilisées</h3>
-                            <div class="skills-container">
-                                <span class="skill-badge">Wi-Fi IoT (douchettes)</span>
-                                <span class="skill-badge">GPO prévention fuite de données</span>
-                                <span class="skill-badge">Blocage USB</span>
-                                <span class="skill-badge">Segmentation VLAN</span>
-                                <span class="skill-badge">ACLs Cisco</span>
+                        <div class="projet-content">
+                            <p>Mise en place d'une infrastructure complète pour une PME</p>
+                            <div class="projet-skills">
                                 <span class="skill-badge">Active Directory</span>
+                                <span class="skill-badge">VLAN</span>
+                                <span class="skill-badge">Sauvegarde</span>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <!-- ==================== RÉALISATION N°2 ==================== -->
-            <section class="section-e6">
-                <h2 class="section_titres">
-                    <i class="fas fa-ticket-alt"></i> Réalisation n°2 – Supervision, inventaire GLPI et alerting Nagios
-                </h2>
-
-                <div class="realisation-card">
-                    <div class="realisation-header">
-                        <h2><i class="fas fa-chart-line"></i> GLPI / OCS + Nagios & Zimbra</h2>
-                        <div class="realisation-subtitle">Contexte : Stadium – Gestion des douchettes, supervision Wi-Fi et communication logistique</div>
-                    </div>
-                    <div class="realisation-body">
-                        <!-- Lien PDF ouverture nouvel onglet -->
-                        <div style="margin-bottom: 20px; text-align: right;">
-                            <a href="projet/E6-REA-2.pdf" target="_blank" rel="noopener noreferrer" style="background: #0a1a3a10; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; color:#0a1a3a; text-decoration:none;">
-                                <i class="fas fa-external-link-alt"></i> Ouvrir Réalisation 2 (PDF)
-                            </a>
+                    
+                    <div class="projet-card">
+                        <div class="projet-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Sécurisation réseau</h3>
                         </div>
-                        <!-- Conditions -->
-                        <div class="info-grid">
-                            <div class="info-box">
-                                <h3><i class="fas fa-clipboard-list"></i> Conditions de réalisation</h3>
-                                <p><strong>Ressources fournies :</strong> Infrastructure IRIS, cahier des charges Stadium, accès aux équipements réseau et serveurs.</p>
-                                <p><strong>Résultats attendus :</strong> Chaque douchette est inventoriée automatiquement dans GLPI via l'agent OCS, et toute panne de la borne Wi-Fi déclenche une alerte Nagios vers la DSI pour intervention rapide.</p>
-                            </div>
-                            <div class="info-box">
-                                <h3><i class="fas fa-microchip"></i> Ressources matérielles & logicielles</h3>
-                                <div class="resources-row">
-                                    <div class="resources-col">
-                                        <h4>Matériel</h4>
-                                        <p>Routeur Cisco 2821, Switch Catalyst 2960, Borne WiFi AIR-CAP3502I, Serveur DELL PowerEdge R740</p>
-                                    </div>
-                                    <div class="resources-col">
-                                        <h4>Logiciels</h4>
-                                        <p>VMWare vSphere ESXi 8.1, Windows Server 2022, Debian 12, OCS/GLPI, Zimbra, Nagios, Snort, PuTTY, Wireshark</p>
-                                    </div>
-                                </div>
+                        <div class="projet-content">
+                            <p>Déploiement d'une politique de sécurité réseau complète</p>
+                            <div class="projet-skills">
+                                <span class="skill-badge">Firewall</span>
+                                <span class="skill-badge">VPN</span>
+                                <span class="skill-badge">ACL</span>
                             </div>
                         </div>
-
-                        <!-- Description -->
-                        <div class="info-box" style="margin-bottom: 20px;">
-                            <h3><i class="fas fa-info-circle"></i> Description de la réalisation</h3>
-                            <p>L'inventaire des douchettes est géré dans GLPI grâce aux remontées de l'agent OCS (identification par adresse MAC). Les vendeurs disposent de comptes Zimbra pour la communication logistique. La borne "Shop-Wifi" est supervisée par Nagios, qui alerte la DSI en cas de panne. Une base de connaissances dans GLPI a été créée pour documenter les pannes courantes des scanners ("Panne scan").</p>
+                    </div>
+                    
+                    <div class="projet-card">
+                        <div class="projet-header">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Virtualisation</h3>
                         </div>
-
-                        <!-- Étapes -->
-                        <div class="etapes-list">
-                            <h3><i class="fas fa-list-ol"></i> Étapes de la mise en place</h3>
-                            <ol>
-                                <li><strong>Inventaire OCS/GLPI :</strong> L'agent OCS remonte l'inventaire des douchettes, permettant de les suivre individuellement dans GLPI.</li>
-                                <li><strong>Communication Zimbra :</strong> Création de comptes de messagerie pour les vendeurs afin de coordonner les réapprovisionnements.</li>
-                                <li><strong>Supervision Nagios :</strong> Surveillance de l'état de la borne Wi-Fi de la boutique avec alertes en cas de panne.</li>
-                                <li><strong>Base de connaissances GLPI :</strong> Création d'articles pour aider à la résolution rapide des problèmes fréquents des douchettes.</li>
-                            </ol>
-                        </div>
-
-                        <!-- Compétences -->
-                        <div class="info-box">
-                            <h3><i class="fas fa-code-branch"></i> Compétences mobilisées</h3>
-                            <div class="skills-container">
-                                <span class="skill-badge">OCS/GLPI</span>
-                                <span class="skill-badge">Inventaire automatisé</span>
-                                <span class="skill-badge">Base de connaissances ITIL</span>
-                                <span class="skill-badge">Nagios supervision</span>
-                                <span class="skill-badge">Alerting DSI</span>
-                                <span class="skill-badge">Zimbra collaboration</span>
-                                <span class="skill-badge">Surveillance Wi-Fi</span>
+                        <div class="projet-content">
+                            <p>Migration d'une infrastructure physique vers virtualisée</p>
+                            <div class="projet-skills">
+                                <span class="skill-badge">VMware</span>
+                                <span class="skill-badge">Migration</span>
+                                <span class="skill-badge">P2V</span>
                             </div>
                         </div>
-
-                        <!-- Modalités d'accès -->
-                        <div class="info-box" style="margin-top: 15px; background: #eef2fa;">
-                            <h3><i class="fas fa-folder-open"></i> Modalités d’accès aux productions et documentation</h3>
-                            <p>Les documentations techniques, configurations des ACLs, captures d’écran GLPI, dashboards Nagios et rapports d’inventaire sont disponibles dans le portfolio numérique et accessibles au jury lors de l’épreuve E6.</p>
+                    </div>
+                    
+                    <div class="projet-card">
+                        <div class="projet-header">
+                            <i class="fas fa-wifi"></i>
+                            <h3>Réseau sans fil</h3>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- RAPPEL CONTENU ÉPREUVE (portfolio, tableau, oral) -->
-            <section class="section-e6">
-                <h2 class="section_titres">
-                    <i class="fas fa-graduation-cap"></i> Modalités de l'épreuve E6
-                </h2>
-                <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: space-between;">
-                    <div style="flex:1; background: #f8fafd; border-radius: 18px; padding: 25px; text-align: center;">
-                        <i class="fas fa-id-card" style="font-size: 2.5rem; color:#0a1a3a;"></i>
-                        <h3 style="margin: 15px 0;">Portfolio numérique</h3>
-                        <p>Présentation personnelle, compétences, projets, expériences de stage, veille technologique.</p>
-                    </div>
-                    <div style="flex:1; background: #f8fafd; border-radius: 18px; padding: 25px; text-align: center;">
-                        <i class="fas fa-table-list" style="font-size: 2.5rem; color:#0a1a3a;"></i>
-                        <h3 style="margin: 15px 0;">Tableau de synthèse</h3>
-                        <p>Liste des réalisations professionnelles et compétences du référentiel associées.</p>
-                    </div>
-                    <div style="flex:1; background: #f8fafd; border-radius: 18px; padding: 25px; text-align: center;">
-                        <i class="fas fa-chalkboard-user" style="font-size: 2.5rem; color:#0a1a3a;"></i>
-                        <h3 style="margin: 15px 0;">Entretien oral</h3>
-                        <p>Présentation + questions du jury (durée indicative totale ~40 minutes).</p>
+                        <div class="projet-content">
+                            <p>Déploiement d'un réseau Wi-Fi d'entreprise sécurisé</p>
+                            <div class="projet-skills">
+                                <span class="skill-badge">Wi-Fi</span>
+                                <span class="skill-badge">Sécurité</span>
+                                <span class="skill-badge">Contrôle d'accès</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -727,24 +950,28 @@
                     <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
+            
             <div class="footer-section">
                 <h3 class="footer-titre"><i class="fas fa-star"></i> Expertises</h3>
                 <ul class="footer-competences">
-                    <li><i class="fas fa-network-wired"></i> Réseaux Cisco & Sécurité</li>
-                    <li><i class="fas fa-shield-alt"></i> ACLs / VLAN / GPO</li>
-                    <li><i class="fas fa-server"></i> Windows Server / Linux</li>
-                    <li><i class="fas fa-chart-line"></i> Supervision Nagios, GLPI</li>
+                    <li><i class="fas fa-network-wired"></i> Réseaux Cisco & Fortinet</li>
+                    <li><i class="fas fa-shield-alt"></i> Sécurité informatique</li>
+                    <li><i class="fas fa-server"></i> Administration systèmes</li>
+                    <li><i class="fas fa-flask"></i> Rigueur scientifique</li>
                 </ul>
             </div>
+            
             <div class="footer-section">
                 <h3 class="footer-titre"><i class="fas fa-bullseye"></i> Objectifs 2025</h3>
                 <ul class="footer-certifications">
                     <li><i class="fas fa-graduation-cap"></i> BTS SIO SISR</li>
-                    <li><i class="fas fa-certificate"></i> Certification Fortinet NSE4</li>
+                    <li><i class="fas fa-certificate"></i> Stage BADR Algérie</li>
+                    <li><i class="fas fa-shield-alt"></i> Fortinet NSE4</li>
                     <li><i class="fas fa-globe"></i> Carrière internationale</li>
                 </ul>
             </div>
         </div>
+        
         <div class="footer-bas">
             <div class="reseaux-footer">
                 <a href="https://www.linkedin.com/in/bilal-rouane-311133340/" 
@@ -754,6 +981,7 @@
                     <img src="Images/LinkedIn_icon.svg" alt="LinkedIn" width="30">
                 </a>
             </div>
+            
             <div class="copyright">
                 <p>© 2025 - Bilal Rouane - Tous droits réservés</p>
                 <p><i class="fas fa-envelope"></i> bilal.rouane.pro@gmail.com | <i class="fas fa-phone"></i> +33743290209</p>
@@ -762,19 +990,21 @@
     </footer>
 
     <script>
-        // Mise en surbrillance de la page active
+        // Script pour mettre en surbrillance la page active
         document.addEventListener('DOMContentLoaded', function() {
             const currentPage = window.location.pathname.split('/').pop();
             const navLinks = document.querySelectorAll('.nav-link');
+            
             navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                if (link.getAttribute('href') === currentPage || 
+                    (currentPage === '' && link.getAttribute('href') === 'index.html')) {
                     link.classList.add('active');
-                } else if (currentPage === 'e6.html' && href === 'e6.html') {
-                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
                 }
             });
         });
     </script>
+    
 </body>
 </html>
