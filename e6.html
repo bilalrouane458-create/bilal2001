@@ -74,9 +74,11 @@
             border-radius: 30px;
         }
 
+        /* Signature à gauche - couleur blanche */
         .logo img {
             height: 45px;
             vertical-align: middle;
+            filter: brightness(0) invert(1); /* Rend la signature blanche */
         }
 
         /* ===== CONTENU PRINCIPAL ===== */
@@ -441,6 +443,19 @@
             margin: 0 auto;
         }
 
+        .reseaux-footer {
+            margin-bottom: 15px;
+        }
+
+        .reseaux-footer a img {
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s;
+        }
+
+        .reseaux-footer a:hover img {
+            transform: scale(1.1);
+        }
+
         .copyright p {
             color: #8a9bb5;
             margin: 5px 0;
@@ -476,12 +491,12 @@
 </head>
 <body>
 
-    <!-- ===== HEADER IDENTIQUE À L'ACCUEIL ===== -->
+    <!-- ===== HEADER AVEC SIGNATURE BLANCHE À GAUCHE ===== -->
     <header>
         <nav id="navigation" aria-label="Navigation principale">
             <ul class="menu">
                 <li class="logo">
-                    <img src="Images/signature.png" id="signature" alt="Signature Bilal Rouane" onerror="this.style.display='none'">
+                    <img src="Images/signature.png" id="signature" alt="Signature Bilal Rouane" style="filter: brightness(0) invert(1);">
                 </li>
                 <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
                 <li><a href="apropos.html" class="nav-link"><i class="fas fa-user"></i> À propos</a></li>
@@ -503,7 +518,7 @@
                 <p class="page-sous-titre" style="margin-top: 10px;">Mes deux réalisations professionnelles en contexte Stadium</p>
             </section>
 
-            <!-- ===== BANDEAU TÉLÉCHARGEMENT PDF (AJOUTÉ AU DÉBUT) ===== -->
+            <!-- ===== BANDEAU TÉLÉCHARGEMENT PDF AVEC OUVERTURE NOUVEL ONGLET ===== -->
             <div class="pdf-download-band">
                 <div class="pdf-info">
                     <div class="pdf-icon">
@@ -511,15 +526,15 @@
                     </div>
                     <div class="pdf-text">
                         <h3><i class="fas fa-download"></i> Documents complets des réalisations E6</h3>
-                        <p>Téléchargez les deux dossiers de réalisation professionnelle au format PDF</p>
+                        <p>Cliquez sur les boutons pour ouvrir les PDF dans un nouvel onglet</p>
                     </div>
                 </div>
                 <div class="pdf-buttons">
-                    <a href="projet/E6-REA-1.pdf" class="btn-pdf" download>
-                        <i class="fas fa-file-pdf"></i> E6-REA-1.pdf
+                    <a href="projet/E6-REA-1.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-file-pdf"></i> Réalisation 1
                     </a>
-                    <a href="projet/E6-REA-2.pdf" class="btn-pdf" download>
-                        <i class="fas fa-file-pdf"></i> E6-REA-2.pdf
+                    <a href="projet/E6-REA-2.pdf" class="btn-pdf" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-file-pdf"></i> Réalisation 2
                     </a>
                 </div>
             </div>
@@ -536,10 +551,10 @@
                         <div class="realisation-subtitle">Contexte : Stadium – Boutique officielle du stade | Mise en place d’un réseau isolé pour les caisses et scanners</div>
                     </div>
                     <div class="realisation-body">
-                        <!-- Lien direct PDF dans la carte aussi pour plus de visibilité -->
+                        <!-- Lien PDF ouverture nouvel onglet -->
                         <div style="margin-bottom: 20px; text-align: right;">
-                            <a href="projet/E6-REA-1.pdf" download style="background: #0a1a3a10; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; color:#0a1a3a; text-decoration:none;">
-                                <i class="fas fa-file-pdf"></i> Télécharger le dossier complet (PDF)
+                            <a href="projet/E6-REA-1.pdf" target="_blank" rel="noopener noreferrer" style="background: #0a1a3a10; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; color:#0a1a3a; text-decoration:none;">
+                                <i class="fas fa-external-link-alt"></i> Ouvrir Réalisation 1 (PDF)
                             </a>
                         </div>
                         <!-- Conditions / Résultats -->
@@ -609,10 +624,10 @@
                         <div class="realisation-subtitle">Contexte : Stadium – Gestion des douchettes, supervision Wi-Fi et communication logistique</div>
                     </div>
                     <div class="realisation-body">
-                        <!-- Lien PDF dans la carte -->
+                        <!-- Lien PDF ouverture nouvel onglet -->
                         <div style="margin-bottom: 20px; text-align: right;">
-                            <a href="projet/E6-REA-2.pdf" download style="background: #0a1a3a10; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; color:#0a1a3a; text-decoration:none;">
-                                <i class="fas fa-file-pdf"></i> Télécharger le dossier complet (PDF)
+                            <a href="projet/E6-REA-2.pdf" target="_blank" rel="noopener noreferrer" style="background: #0a1a3a10; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; color:#0a1a3a; text-decoration:none;">
+                                <i class="fas fa-external-link-alt"></i> Ouvrir Réalisation 2 (PDF)
                             </a>
                         </div>
                         <!-- Conditions -->
@@ -737,6 +752,14 @@
             </div>
         </div>
         <div class="footer-bas">
+            <div class="reseaux-footer">
+                <a href="https://www.linkedin.com/in/bilal-rouane-311133340/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn">
+                    <img src="Images/LinkedIn_icon.svg" alt="LinkedIn" width="30">
+                </a>
+            </div>
             <div class="copyright">
                 <p>© 2025 - Bilal Rouane - Tous droits réservés</p>
                 <p><i class="fas fa-envelope"></i> bilal.rouane.pro@gmail.com | <i class="fas fa-phone"></i> +33743290209</p>
