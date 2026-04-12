@@ -140,6 +140,83 @@
             margin-right: 12px;
         }
 
+        /* ===== BANDEAU TÉLÉCHARGEMENT PDF EN TÊTE ===== */
+        .pdf-download-band {
+            background: linear-gradient(135deg, #f8fafd 0%, #ffffff 100%);
+            border-radius: 20px;
+            padding: 20px 30px;
+            margin-bottom: 35px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border: 1px solid #dce5ef;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .pdf-download-band .pdf-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .pdf-download-band .pdf-icon {
+            background: #0a1a3a;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .pdf-download-band .pdf-text h3 {
+            color: #0a1a3a;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .pdf-download-band .pdf-text p {
+            color: #4a627a;
+            font-size: 0.85rem;
+        }
+
+        .pdf-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-pdf {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0a1a3a;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-pdf i {
+            font-size: 1.1rem;
+        }
+
+        .btn-pdf:hover {
+            background: #1f3a5c;
+            transform: translateY(-2px);
+            gap: 14px;
+        }
+
         /* Cartes réalisations */
         .realisation-card {
             background: #f8fafd;
@@ -387,6 +464,13 @@
                 font-size: 1.3rem;
                 flex-wrap: wrap;
             }
+            .pdf-download-band {
+                flex-direction: column;
+                text-align: center;
+            }
+            .pdf-buttons {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -419,6 +503,27 @@
                 <p class="page-sous-titre" style="margin-top: 10px;">Mes deux réalisations professionnelles en contexte Stadium</p>
             </section>
 
+            <!-- ===== BANDEAU TÉLÉCHARGEMENT PDF (AJOUTÉ AU DÉBUT) ===== -->
+            <div class="pdf-download-band">
+                <div class="pdf-info">
+                    <div class="pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="pdf-text">
+                        <h3><i class="fas fa-download"></i> Documents complets des réalisations E6</h3>
+                        <p>Téléchargez les deux dossiers de réalisation professionnelle au format PDF</p>
+                    </div>
+                </div>
+                <div class="pdf-buttons">
+                    <a href="projet/E6-REA-1.pdf" class="btn-pdf" download>
+                        <i class="fas fa-file-pdf"></i> E6-REA-1.pdf
+                    </a>
+                    <a href="projet/E6-REA-2.pdf" class="btn-pdf" download>
+                        <i class="fas fa-file-pdf"></i> E6-REA-2.pdf
+                    </a>
+                </div>
+            </div>
+
             <!-- ==================== RÉALISATION N°1 ==================== -->
             <section class="section-e6">
                 <h2 class="section_titres">
@@ -431,6 +536,12 @@
                         <div class="realisation-subtitle">Contexte : Stadium – Boutique officielle du stade | Mise en place d’un réseau isolé pour les caisses et scanners</div>
                     </div>
                     <div class="realisation-body">
+                        <!-- Lien direct PDF dans la carte aussi pour plus de visibilité -->
+                        <div style="margin-bottom: 20px; text-align: right;">
+                            <a href="projet/E6-REA-1.pdf" download style="background: #0a1a3a10; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; color:#0a1a3a; text-decoration:none;">
+                                <i class="fas fa-file-pdf"></i> Télécharger le dossier complet (PDF)
+                            </a>
+                        </div>
                         <!-- Conditions / Résultats -->
                         <div class="info-grid">
                             <div class="info-box">
@@ -498,6 +609,12 @@
                         <div class="realisation-subtitle">Contexte : Stadium – Gestion des douchettes, supervision Wi-Fi et communication logistique</div>
                     </div>
                     <div class="realisation-body">
+                        <!-- Lien PDF dans la carte -->
+                        <div style="margin-bottom: 20px; text-align: right;">
+                            <a href="projet/E6-REA-2.pdf" download style="background: #0a1a3a10; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; color:#0a1a3a; text-decoration:none;">
+                                <i class="fas fa-file-pdf"></i> Télécharger le dossier complet (PDF)
+                            </a>
+                        </div>
                         <!-- Conditions -->
                         <div class="info-grid">
                             <div class="info-box">
