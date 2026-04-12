@@ -13,6 +13,475 @@
     
     <link rel="icon" type="image/x-icon" href="Images/Photo pro.jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== STYLES GÉNÉRAUX ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f8;
+            color: #1a2a3a;
+            line-height: 1.5;
+        }
+
+        .fond {
+            background: linear-gradient(135deg, #f0f2f8 0%, #e8ecf5 100%);
+            min-height: 100vh;
+        }
+
+        .contenu {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 15px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .menu li {
+            margin: 0 5px;
+        }
+
+        .menu li a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .menu li a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: #0a1a3a;
+            color: white;
+            border-radius: 30px;
+        }
+
+        .logo img {
+            height: 45px;
+            vertical-align: middle;
+        }
+
+        /* ===== BANNIÈRE BLEU FONCÉ - TEXTE BLANC ===== */
+        #titre-e5 {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 50px 30px;
+            background: #0a1a3a;
+            background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
+            border-radius: 25px;
+            color: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .page-titre {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .page-sous-titre {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            color: white;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section-e5 {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .section-e5:hover {
+            transform: translateY(-3px);
+        }
+
+        .section_titres {
+            font-size: 1.8rem;
+            color: #0a1a3a;
+            border-left: 5px solid #0a1a3a;
+            padding-left: 20px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .section_titres i {
+            color: #0a1a3a;
+            margin-right: 12px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #4a627a;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        /* ===== CARTE D'INTRODUCTION ===== */
+        .intro-card {
+            display: flex;
+            gap: 1.5rem;
+            background: linear-gradient(135deg, #0a1a3a 0%, #1e3a5f 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 0;
+            color: white;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .intro-icon {
+            font-size: 3rem;
+            background: rgba(255,255,255,0.15);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        .intro-text h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .intro-text h2 i {
+            color: white;
+        }
+
+        .intro-text p {
+            line-height: 1.6;
+            font-size: 1rem;
+            color: #e0e7ff;
+        }
+
+        /* ===== TABLEAU DE SYNTHÈSE ===== */
+        .synthese-intro {
+            background: #eef2fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 5px solid #0a1a3a;
+        }
+
+        .synthese-intro p {
+            margin: 0;
+            line-height: 1.6;
+            color: #1e2e3e;
+        }
+
+        .synthese-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .synthese-card-link {
+            text-decoration: none;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .synthese-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #0a1a3a;
+        }
+
+        .synthese-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .synthese-icon {
+            font-size: 4rem;
+            color: #dc3545;
+            margin-bottom: 1rem;
+        }
+
+        .synthese-content h3 {
+            color: #0a1a3a;
+            margin-bottom: 0.5rem;
+        }
+
+        .synthese-content p {
+            color: #4a627a;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-synthese {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0a1a3a;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-synthese:hover {
+            background: #1e3a5f;
+        }
+
+        /* ===== GRILLE PROJETS ===== */
+        .realisations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .realisation-card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .realisation-card {
+            background: #f8fafd;
+            border-radius: 18px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e8edf5;
+        }
+
+        .realisation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            border-color: #0a1a3a;
+        }
+
+        .realisation-icon {
+            font-size: 2.5rem;
+            color: #0a1a3a;
+            margin-bottom: 1rem;
+        }
+
+        .realisation-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: #0a1a3a;
+        }
+
+        .realisation-card p {
+            color: #4a627a;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .btn-pdf {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #0a1a3a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .btn-pdf:hover {
+            background: #1e3a5f;
+        }
+
+        /* ===== STAGES ===== */
+        .stages-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .stage-card {
+            text-decoration: none;
+            color: inherit;
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+
+        .stage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .stage-badge {
+            padding: 12px 20px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .stage-1 .stage-badge {
+            background: linear-gradient(135deg, #0a1a3a 0%, #1e3a5f 100%);
+            color: white;
+        }
+
+        .stage-2 .stage-badge {
+            background: linear-gradient(135deg, #0a1a3a 0%, #2c5282 100%);
+            color: white;
+        }
+
+        .stage-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stage-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stage-1 .stage-icon { color: #0a1a3a; }
+        .stage-2 .stage-icon { color: #0a1a3a; }
+
+        .stage-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: #0a1a3a;
+        }
+
+        .stage-card p {
+            color: #4a627a;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-stage {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #0a1a3a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .stage-card:hover .btn-stage {
+            background: #1e3a5f;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, #0a1a3a, #0a1222);
+            color: #e0e7ff;
+            margin-top: 60px;
+            padding: 45px 20px 25px;
+        }
+
+        .footer-bas {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #2d3a5e;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .copyright p {
+            color: #8a9bb5;
+            margin: 5px 0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .page-titre {
+                font-size: 1.8rem;
+            }
+            .section-e5 {
+                padding: 20px;
+            }
+            .section_titres {
+                font-size: 1.4rem;
+            }
+            .intro-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .realisations-grid {
+                grid-template-columns: 1fr;
+            }
+            .stages-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .synthese-container {
+                padding: 0 1rem;
+            }
+            .menu {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .menu li a {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body class="fond">
 
@@ -36,7 +505,7 @@
         <div class="contenu">
             <span id="saut_menu"></span>
             
-            <!-- Titre principal -->
+            <!-- Titre principal - BANNIÈRE BLEU FONCÉ -->
             <section id="titre-e5">
                 <h1 class="page-titre">Épreuve E5 – Support et mise à disposition de services informatiques</h1>
                 <p class="page-sous-titre">BTS SIO – IRIS School</p>
@@ -126,7 +595,7 @@
                     <a href="projet/Redondance et tolérance de panne.pdf" target="_blank" class="realisation-card-link">
                         <div class="realisation-card">
                             <div class="realisation-icon"><i class="fas fa-server"></i></div>
-                            <h3>6. Haute Disponibilité et Continuité de Service</h3>
+                            <h3>5. Haute Disponibilité</h3>
                             <p>Mise en place de solutions de redondance et tolérance de panne.</p>
                             <div class="btn-pdf">Voir le PDF <i class="fas fa-arrow-right"></i></div>
                         </div>
@@ -135,18 +604,16 @@
                     <a href="projet/Mise en place du Wi-Fi.pdf" target="_blank" class="realisation-card-link">
                         <div class="realisation-card">
                             <div class="realisation-icon"><i class="fas fa-wifi"></i></div>
-                            <h3>7. Déploiement d'un Réseau Wi-Fi Sécurisé</h3>
+                            <h3>6. Déploiement Wi-Fi Sécurisé</h3>
                             <p>Mise en place du Wi-Fi avec authentification 802.1X et RADIUS.</p>
                             <div class="btn-pdf">Voir le PDF <i class="fas fa-arrow-right"></i></div>
                         </div>
                     </a>
 
-                    <a href="projet/Gestion et administration.pdf" target="_blank" class="realisation-card-link">
+                    <a href="projet/Infrastructure et administration.pdf" target="_blank" class="realisation-card-link">
                         <div class="realisation-card">
                             <div class="realisation-icon"><i class="fas fa-cogs"></i></div>
-                            <h3>8. Infrastructure et Administration des Services Informatiques
-
-</h3>
+                            <h3>7. Infrastructure et Administration</h3>
                             <p>Mise en place et administration complète des services informatiques.</p>
                             <div class="btn-pdf">Voir le PDF <i class="fas fa-arrow-right"></i></div>
                         </div>
@@ -155,36 +622,34 @@
                     <a href="projet/Optimiser le référencement.pdf" target="_blank" class="realisation-card-link">
                         <div class="realisation-card">
                             <div class="realisation-icon"><i class="fas fa-chart-simple"></i></div>
-                            <h3>10. Optimiser le référencement du site web avec SEO (Search Engin Optimisation)</h3>
+                            <h3>8. Optimisation SEO</h3>
                             <p>Optimisation du référencement du site web avec les techniques SEO.</p>
                             <div class="btn-pdf">Voir le PDF <i class="fas fa-arrow-right"></i></div>
                         </div>
-                         </a>
+                    </a>
 
                     <a href="projet/Sécurisation de l'infrastructure.pdf" target="_blank" class="realisation-card-link">
                         <div class="realisation-card">
                             <div class="realisation-icon"><i class="fas fa-shield-alt"></i></div>
-                            <h3>12. Sécurisation de l'infrastructure evec un IDS/IPS (Snort)</h3>
+                            <h3>9. IDS/IPS avec Snort</h3>
                             <p>Déploiement et configuration de Snort pour la détection et prévention d'intrusions.</p>
                             <div class="btn-pdf">Voir le PDF <i class="fas fa-arrow-right"></i></div>
                         </div>
                     </a>
 
-                    <a href="projet/Sécurisation de l’accès.pdf" target="_blank" class="realisation-card-link">
+                    <a href="projet/Sécurisation de l'accès.pdf" target="_blank" class="realisation-card-link">
                         <div class="realisation-card">
                             <div class="realisation-icon"><i class="fas fa-firewall"></i></div>
-                            <h3>13. Sécurisation de l’accès à Internet
-et mise en place d’une DMZ</h3>
+                            <h3>10. Sécurisation Accès Internet et DMZ</h3>
                             <p>Sécurisation de l'accès à Internet et mise en place d'une DMZ.</p>
                             <div class="btn-pdf">Voir le PDF <i class="fas fa-arrow-right"></i></div>
                         </div>
                     </a>
 
-                    <a href="projet/sécurisée et sécurisation des interconnexions.pdf" target="_blank" class="realisation-card-link">
+                    <a href="projet/Administration distance sécurisée.pdf" target="_blank" class="realisation-card-link">
                         <div class="realisation-card">
                             <div class="realisation-icon"><i class="fas fa-door-open"></i></div>
-                            <h3>14. Administration à distance sécurisée
-et sécurisation des interconnexions</h3>
+                            <h3>11. Administration à distance sécurisée</h3>
                             <p>Sécurisation des accès et des interconnexions réseau.</p>
                             <div class="btn-pdf">Voir le PDF <i class="fas fa-arrow-right"></i></div>
                         </div>
@@ -226,305 +691,27 @@ et sécurisation des interconnexions</h3>
         <div class="footer-bas">
             <div class="copyright">
                 <p>© 2025 - Bilal Rouane - Tous droits réservés</p>
-                <p><i class="fas fa-envelope"></i> bilal.rouane.pro@gmail.com</p>
+                <p><i class="fas fa-envelope"></i> bilal.rouane.pro@gmail.com | <i class="fas fa-phone"></i> +33743290209</p>
             </div>
         </div>
     </footer>
 
-    <style>
-        /* Styles additionnels */
-        .section-description {
-            text-align: center;
-            color: #666;
-            margin-bottom: 2rem;
-            font-size: 1rem;
-        }
-
-        /* Carte d'introduction */
-        .intro-card {
-            display: flex;
-            gap: 1.5rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            color: white;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .intro-icon {
-            font-size: 3rem;
-            background: rgba(255,255,255,0.2);
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-
-        .intro-text {
-            flex: 1;
-        }
-
-        .intro-text h2 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .intro-text p {
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        /* Tableau de synthèse */
-        .synthese-intro {
-            background: #e8f4f8;
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            border-left: 5px solid #2196F3;
-        }
-
-        .synthese-intro p {
-            margin: 0;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .synthese-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .synthese-card-link {
-            text-decoration: none;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .synthese-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid #2196F3;
-        }
-
-        .synthese-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .synthese-icon {
-            font-size: 4rem;
-            color: #dc3545;
-            margin-bottom: 1rem;
-        }
-
-        .synthese-content h3 {
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-
-        .synthese-content p {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        .btn-synthese {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #2196F3;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn-synthese:hover {
-            background: #0b7dda;
-        }
-
-        /* Grille projets */
-        .realisations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .realisation-card-link {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .realisation-card {
-            background: white;
-            border-radius: 15px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .realisation-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .realisation-icon {
-            font-size: 2.5rem;
-            color: #2196F3;
-            margin-bottom: 1rem;
-        }
-
-        .realisation-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: #333;
-        }
-
-        .realisation-card p {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-            flex: 1;
-        }
-
-        .btn-pdf {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: #dc3545;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: background 0.3s;
-        }
-
-        .btn-pdf:hover {
-            background: #c82333;
-        }
-
-        /* Stages */
-        .stages-container {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .stage-card {
-            text-decoration: none;
-            color: inherit;
-            flex: 1;
-            min-width: 300px;
-            max-width: 450px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: white;
-        }
-
-        .stage-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .stage-badge {
-            padding: 12px 20px;
-            font-weight: bold;
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        .stage-1 .stage-badge {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            color: white;
-        }
-
-        .stage-2 .stage-badge {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-
-        .stage-content {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .stage-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .stage-1 .stage-icon { color: #11998e; }
-        .stage-2 .stage-icon { color: #f5576c; }
-
-        .stage-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: #333;
-        }
-
-        .stage-card p {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-        }
-
-        .btn-stage {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: #6c757d;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: background 0.3s;
-        }
-
-        .stage-card:hover .btn-stage {
-            background: #5a6268;
-        }
-
-        .stage-1 .btn-stage:hover { background: #0e8a7a; }
-        .stage-2 .btn-stage:hover { background: #e04e62; }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .intro-card {
-                flex-direction: column;
-                text-align: center;
-            }
-            .realisations-grid {
-                grid-template-columns: 1fr;
-            }
-            .stages-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .synthese-container {
-                padding: 0 1rem;
-            }
-        }
-    </style>
+    <script>
+        // Script pour mettre en surbrillance la page active
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage || 
+                    (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    
 </body>
 </html>
