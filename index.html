@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <title>Bilal ROUANE | Portfolio BTS SIO</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Épreuve E6 - Réalisations | Bilal Rouane</title>
+    <meta name="description" content="Portfolio de Bilal Rouane, étudiant en BTS SIO SISR">
     
-    <!-- Police Roboto -->
+    <!-- Import de la police ROBOTO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="Images/Photo pro.jpeg">
+    
+    <!-- Font Awesome pour icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* ===== STYLES GÉNÉRAUX ===== */
         * {
             margin: 0;
             padding: 0;
@@ -22,13 +28,23 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #f0f2f8 0%, #e8ecf5 100%);
+            background-color: #f0f2f8;
             color: #1a2a3a;
             line-height: 1.5;
+        }
+
+        .fond {
+            background: linear-gradient(135deg, #f0f2f8 0%, #e8ecf5 100%);
             min-height: 100vh;
         }
 
-        /* ===== HEADER & NAVIGATION (identique à l'accueil) ===== */
+        .contenu {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ===== HEADER & NAVIGATION - BLEU FONCÉ ===== */
         header {
             background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -69,7 +85,7 @@
         }
 
         .nav-link.active {
-            background: #1e3a5f;
+            background: #0a1a3a;
             color: white;
             border-radius: 30px;
         }
@@ -79,232 +95,196 @@
             vertical-align: middle;
         }
 
-        /* ===== CONTENU PRINCIPAL ===== */
-        .contenu {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Bannière Épreuve E6 */
-        #titre-e6 {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 50px 30px;
+        /* ===== SECTION ACCUEIL AVEC BANNIÈRE BLEU FONCÉ ===== */
+        #accueil {
             background: #0a1a3a;
-            background: linear-gradient(135deg, #0a1a3a 0%, #0f2a4a 100%);
             border-radius: 25px;
-            color: white;
+            padding: 50px 40px;
+            margin-bottom: 40px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
-        .page-titre {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            font-weight: 700;
+        .titre_presentation {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #nom {
+            font-size: 3.5rem;
             color: white;
+            margin-bottom: 25px;
+            font-weight: 700;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         }
 
-        .page-sous-titre {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            color: white;
+        /* PHOTO AGRANDIE */
+        .photo-container {
+            margin: 25px auto;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
 
-        /* Sections générales */
-        .section-e6 {
-            background: white;
-            border-radius: 25px;
-            padding: 35px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
+        #photo-pro {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .section-e6:hover {
-            transform: translateY(-3px);
+        .sous-titre {
+            font-size: 1.4rem;
+            color: #e0e7ff;
+            margin-top: 15px;
+        }
+
+        .presentation {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
         .section_titres {
             font-size: 1.8rem;
-            color: #0a1a3a;
-            border-left: 5px solid #0a1a3a;
+            color: white;
+            border-left: 5px solid white;
             padding-left: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-weight: 600;
         }
 
         .section_titres i {
-            color: #0a1a3a;
+            color: white;
             margin-right: 12px;
         }
 
-        /* ===== BANDEAU TÉLÉCHARGEMENT PDF EN TÊTE ===== */
-        .pdf-download-band {
-            background: linear-gradient(135deg, #f8fafd 0%, #ffffff 100%);
-            border-radius: 20px;
-            padding: 20px 30px;
-            margin-bottom: 35px;
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #e0e7ff;
+            margin-bottom: 20px;
+        }
+
+        .boutons-navigation {
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
             gap: 20px;
-            border: 1px solid #dce5ef;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .pdf-download-band .pdf-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .pdf-download-band .pdf-icon {
-            background: #0a1a3a;
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-        }
-
-        .pdf-download-band .pdf-text h3 {
-            color: #0a1a3a;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .pdf-download-band .pdf-text p {
-            color: #4a627a;
-            font-size: 0.85rem;
-        }
-
-        .pdf-buttons {
-            display: flex;
-            gap: 15px;
+            margin-top: 30px;
             flex-wrap: wrap;
         }
 
-        .btn-pdf {
+        .btn-nav {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: #0a1a3a;
-            color: white;
-            text-decoration: none;
-            padding: 12px 24px;
+            padding: 12px 28px;
             border-radius: 40px;
+            text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.25s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-pdf i {
-            font-size: 1.1rem;
-        }
-
-        .btn-pdf:hover {
-            background: #1f3a5c;
-            transform: translateY(-2px);
-            gap: 14px;
-        }
-
-        /* Cartes réalisations */
-        .realisation-card {
-            background: #f8fafd;
-            border-radius: 20px;
-            margin-bottom: 45px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
         }
 
-        .realisation-card:last-child {
-            margin-bottom: 0;
-        }
-
-        .realisation-header {
-            background: linear-gradient(135deg, #0a1a3a, #14345c);
-            padding: 25px 30px;
-            color: white;
-        }
-
-        .realisation-header h2 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .realisation-header h2 i {
-            font-size: 2rem;
-        }
-
-        .realisation-subtitle {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-
-        .realisation-body {
-            padding: 30px;
-        }
-
-        /* Grille info */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .info-box {
+        .btn-nav-primary {
             background: white;
-            border-radius: 16px;
-            padding: 20px;
-            border-left: 4px solid #0a1a3a;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            color: #0a1a3a;
         }
 
-        .info-box h3 {
+        .btn-nav-primary:hover {
+            background: #e0e7ff;
+            transform: translateY(-2px);
+        }
+
+        .btn-nav-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-nav-secondary:hover {
+            background: white;
             color: #0a1a3a;
-            font-size: 1.2rem;
+            transform: translateY(-2px);
+        }
+
+        /* ===== COMPÉTENCES ===== */
+        #competences_accueil {
+            margin-top: 40px;
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        #competences_accueil .section_titres {
+            color: #0a1a3a;
+            border-left: 5px solid #0a1a3a;
+        }
+
+        #competences_accueil .section_titres i {
+            color: #0a1a3a;
+        }
+
+        .grid-competences {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .carte-competence {
+            background: #f8fafd;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e8edf5;
+        }
+
+        .carte-competence:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #0a1a3a;
+        }
+
+        .logo-competence {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            border-radius: 15px;
         }
 
-        .info-box h3 i {
+        .nom-competence {
+            font-size: 1.3rem;
             color: #0a1a3a;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
         }
 
-        .info-box p, .info-box li {
-            color: #2c3e50;
-            line-height: 1.6;
+        .niveau-competence {
+            display: inline-block;
+            background: #0a1a3a;
+            color: white;
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
         }
 
-        .info-box ul {
+        .details-competence {
             list-style: none;
-            padding-left: 0;
+            padding: 0;
+            text-align: left;
         }
 
-        .info-box li {
+        .details-competence li {
             padding: 6px 0;
-            padding-left: 20px;
+            padding-left: 25px;
             position: relative;
+            color: #4a627a;
         }
 
-        .info-box li::before {
+        .details-competence li::before {
             content: "▹";
             position: absolute;
             left: 0;
@@ -312,87 +292,7 @@
             font-weight: bold;
         }
 
-        /* Étapes */
-        .etapes-list {
-            background: #f1f5f9;
-            border-radius: 16px;
-            padding: 20px 25px;
-            margin: 20px 0;
-        }
-
-        .etapes-list h3 {
-            color: #0a1a3a;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .etapes-list ol {
-            padding-left: 25px;
-        }
-
-        .etapes-list li {
-            margin: 12px 0;
-            color: #2c3e50;
-        }
-
-        /* Compétences mobilisées */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .skill-badge {
-            background: #e8edf5;
-            color: #0a1a3a;
-            padding: 6px 14px;
-            border-radius: 25px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid #cbd5e1;
-            transition: all 0.2s;
-        }
-
-        .skill-badge:hover {
-            background: #0a1a3a;
-            color: white;
-            border-color: #0a1a3a;
-        }
-
-        /* Ressources matérielles/logicielles */
-        .resources-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .resources-col {
-            flex: 1;
-            min-width: 200px;
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 15px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .resources-col h4 {
-            color: #0a1a3a;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .resources-col p {
-            font-size: 0.85rem;
-            color: #4a627a;
-        }
-
-        /* Pied de page */
+        /* ===== FOOTER ===== */
         footer {
             background: linear-gradient(135deg, #0a1a3a, #0a1222);
             color: #e0e7ff;
@@ -459,37 +359,50 @@
             margin: 5px 0;
         }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .page-titre {
-                font-size: 1.8rem;
-            }
-            .section-e6 {
-                padding: 20px;
+            #nom {
+                font-size: 2rem;
             }
             .section_titres {
                 font-size: 1.4rem;
+            }
+            .grid-competences {
+                grid-template-columns: 1fr;
             }
             .menu {
                 flex-direction: column;
                 gap: 8px;
             }
-            .realisation-header h2 {
-                font-size: 1.3rem;
-                flex-wrap: wrap;
-            }
-            .pdf-download-band {
-                flex-direction: column;
+            .menu li a {
+                display: block;
+                width: 100%;
                 text-align: center;
             }
-            .pdf-buttons {
+            #accueil {
+                padding: 30px 20px;
+            }
+            .photo-container {
+                width: 200px;
+                height: 200px;
+            }
+            .boutons-navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-nav {
+                width: 100%;
                 justify-content: center;
+            }
+            #competences_accueil {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body class="fond">
 
-    <!-- ===== HEADER IDENTIQUE À L'ACCUEIL AVEC SIGNATURE BLANCHE ===== -->
+    <!-- ===== HEADER ===== -->
     <header>
         <nav id="navigation" aria-label="Navigation principale">
             <ul class="menu">
@@ -497,7 +410,7 @@
                     <img src="Images/signature.png" id="signature" alt="Signature Bilal Rouane">
                 </li>
                 <li>
-                    <a href="index.html" class="nav-link">
+                    <a href="index.html" class="nav-link active">
                         <i class="fas fa-home"></i> Accueil
                     </a>
                 </li>
@@ -517,7 +430,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="e6.html" class="nav-link active">
+                    <a href="e6.html" class="nav-link">
                         <i class="fas fa-server"></i> Épreuve E6
                     </a>
                 </li>
@@ -533,211 +446,86 @@
                 </li>
             </ul>
         </nav>
+        <span id="saut_separateur"></span>
     </header>
 
+    <!-- ===== CONTENU ACCUEIL ===== -->
     <main>
         <div class="contenu">
-            <!-- Bannière -->
-            <section id="titre-e6">
-                <h1 class="page-titre">Épreuve E6 – Administration des systèmes et des réseaux</h1>
-                <p class="page-sous-titre">Option SISR – Solutions d'Infrastructure, Systèmes et Réseaux</p>
-                <p class="page-sous-titre" style="margin-top: 10px;">Mes deux réalisations professionnelles en contexte Stadium</p>
-            </section>
-
-            <!-- ===== BANDEAU TÉLÉCHARGEMENT PDF AVEC NOMS "Réalisation 1" et "Réalisation 2" ===== -->
-            <div class="pdf-download-band">
-                <div class="pdf-info">
-                    <div class="pdf-icon">
-                        <i class="fas fa-file-pdf"></i>
+            <span id="saut_menu"></span>
+ 
+            <!-- Section Accueil - BANNIÈRE BLEU FONCÉ AVEC PHOTO AGRANDIE -->
+            <section id="accueil" aria-labelledby="titre-accueil">
+                <div class="titre_presentation">
+                    <h1 id="nom">Bilal ROUANE</h1>
+                    <div class="photo-container">
+                        <img src="Images/pppp.jpeg" id="photo-pro" 
+                             alt="Photo professionnelle de Bilal Rouane" 
+                             width="300" height="400">
                     </div>
-                    <div class="pdf-text">
-                        <h3><i class="fas fa-download"></i> Documents complets des réalisations E6</h3>
-                        <p>Téléchargez les dossiers complets au format PDF</p>
-                    </div>
+                    <p id="metier" class="sous-titre">Étudiant en BTS SIO SISR</p>
                 </div>
-                <div class="pdf-buttons">
-                    <a href="projet/Realisation1.pdf" class="btn-pdf" download>
-                        <i class="fas fa-file-pdf"></i> Réalisation 1
-                    </a>
-                    <a href="projet/Realisation2.pdf" class="btn-pdf" download>
-                        <i class="fas fa-file-pdf"></i> Réalisation 2
-                    </a>
-                </div>
-            </div>
-
-            <!-- ==================== RÉALISATION N°1 ==================== -->
-            <section class="section-e6">
-                <h2 class="section_titres">
-                    <i class="fas fa-network-wired"></i> Réalisation 1 – Isolation et sécurisation du réseau boutique
-                </h2>
-
-                <div class="realisation-card">
-                    <div class="realisation-header">
-                        <h2><i class="fas fa-shield-alt"></i> VLAN 50 & Sécurité des douchettes Wi-Fi</h2>
-                        <div class="realisation-subtitle">Contexte : Stadium – Boutique officielle du stade | Mise en place d’un réseau isolé pour les caisses et scanners</div>
-                    </div>
-                    <div class="realisation-body">
-                        <!-- Lien PDF Réalisation 1 -->
-                        <div style="margin-bottom: 20px; text-align: right;">
-                            <a href="projet/Realisation1.pdf" download style="background: #0a1a3a10; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; color:#0a1a3a; text-decoration:none;">
-                                <i class="fas fa-file-pdf"></i> Télécharger la Réalisation 1 (PDF)
+                
+                <div class="presentation">
+                    <div id="contenu_accueil_div">
+                        <h2 class="section_titres">Bienvenue sur mon portfolio</h2>
+                        <p class="description">Étudiant passionné en BTS Services Informatiques aux Organisations, option Solutions d'Infrastructure, Systèmes et Réseaux (SISR).</p>
+                        
+                        <p class="description">À travers ce portfolio, découvrez mon parcours, mes compétences techniques et mes projets en administration systèmes et réseaux.</p>
+                        
+                        <div class="boutons-navigation">
+                            <a href="apropos.html" class="btn-nav btn-nav-primary">
+                                <i class="fas fa-info-circle"></i> En savoir plus
+                            </a>
+                            <a href="entreprise.html" class="btn-nav btn-nav-secondary">
+                                <i class="fas fa-building"></i> Mes stages BADR
                             </a>
                         </div>
-                        <!-- Conditions / Résultats -->
-                        <div class="info-grid">
-                            <div class="info-box">
-                                <h3><i class="fas fa-clipboard-list"></i> Conditions de réalisation</h3>
-                                <p><strong>Ressources fournies :</strong> Matériel et logiciel fournis par l’école IRIS, cahier des charges Stadium.</p>
-                                <p><strong>Résultats attendus :</strong> Réseau de la boutique entièrement isolé via VLAN 50 avec ACLs strictes, garantissant la sécurité des données commerciales et le bon fonctionnement des douchettes sur le Wi-Fi métier "Shop-Wifi".</p>
-                            </div>
-                            <div class="info-box">
-                                <h3><i class="fas fa-microchip"></i> Ressources matérielles & logicielles</h3>
-                                <div class="resources-row">
-                                    <div class="resources-col">
-                                        <h4>Matériel</h4>
-                                        <p>Routeur Cisco 2821, Switch Catalyst 2960, Borne WiFi AIR-CAP3502I, Serveur DELL PowerEdge R740</p>
-                                    </div>
-                                    <div class="resources-col">
-                                        <h4>Logiciels</h4>
-                                        <p>VMWare vSphere ESXi 8.1, Windows Server 2022, Windows 11, Debian 12, OCS/GLPI, Zimbra, Snort, PuTTY, Wireshark</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Description complète -->
-                        <div class="info-box" style="margin-bottom: 20px;">
-                            <h3><i class="fas fa-info-circle"></i> Description de la réalisation</h3>
-                            <p>Un VLAN 50 « Boutique » a été mis en place avec des ACLs strictes pour l'isoler. Un groupe Active Directory "Vendeurs-Boutique" a été créé. Une GPO a été déployée pour bloquer les ports USB sur les postes de caisse (prévention de fuite de données) et pour mapper le lecteur B : vers la base de données des articles. Un Wi-Fi métier "Shop-Wifi" a été déployé pour les douchettes.</p>
-                        </div>
-
-                        <!-- Étapes -->
-                        <div class="etapes-list">
-                            <h3><i class="fas fa-list-ol"></i> Étapes de la mise en place</h3>
-                            <ol>
-                                <li><strong>Isolation réseau :</strong> Configuration du VLAN 50 et d'ACLs pour isoler complètement le réseau de la boutique.</li>
-                                <li><strong>Configuration AD :</strong> Création du groupe de sécurité "Vendeurs-Boutique" pour gérer les accès.</li>
-                                <li><strong>Déploiement de la GPO de sécurité :</strong> Application d'une GPO qui mappe le lecteur B: et désactive les ports USB sur les terminaux de caisse.</li>
-                                <li><strong>Déploiement du Wi-Fi :</strong> Mise en service du SSID "Shop-Wifi" pour connecter les douchettes de scan au VLAN 50.</li>
-                            </ol>
-                        </div>
-
-                        <!-- Compétences -->
-                        <div class="info-box">
-                            <h3><i class="fas fa-code-branch"></i> Compétences mobilisées</h3>
-                            <div class="skills-container">
-                                <span class="skill-badge">Wi-Fi IoT (douchettes)</span>
-                                <span class="skill-badge">GPO prévention fuite de données</span>
-                                <span class="skill-badge">Blocage USB</span>
-                                <span class="skill-badge">Segmentation VLAN</span>
-                                <span class="skill-badge">ACLs Cisco</span>
-                                <span class="skill-badge">Active Directory</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- ==================== RÉALISATION N°2 ==================== -->
-            <section class="section-e6">
-                <h2 class="section_titres">
-                    <i class="fas fa-ticket-alt"></i> Réalisation 2 – Supervision, inventaire GLPI et alerting Nagios
+            <!-- Compétences principales (fond blanc) -->
+            <section id="competences_accueil" aria-labelledby="titre-competences-accueil">
+                <h2 id="titre-competences-accueil" class="section_titres">
+                    <i class="fas fa-star"></i> Compétences Techniques
                 </h2>
-
-                <div class="realisation-card">
-                    <div class="realisation-header">
-                        <h2><i class="fas fa-chart-line"></i> GLPI / OCS + Nagios & Zimbra</h2>
-                        <div class="realisation-subtitle">Contexte : Stadium – Gestion des douchettes, supervision Wi-Fi et communication logistique</div>
+                
+                <div class="grid-competences">
+                    <div class="carte-competence">
+                        <img class="logo-competence" src="Images/cisco logo.png" 
+                             alt="Logo Cisco" width="60" height="60">
+                        <h3 class="nom-competence">Réseaux Cisco</h3>
+                        <p class="niveau-competence">Avancé</p>
+                        <ul class="details-competence">
+                            <li>Configuration VLAN</li>
+                            <li>Routing statique/dynamique</li>
+                            <li>ACL & Sécurité</li>
+                        </ul>
                     </div>
-                    <div class="realisation-body">
-                        <!-- Lien PDF Réalisation 2 -->
-                        <div style="margin-bottom: 20px; text-align: right;">
-                            <a href="projet/Realisation2.pdf" download style="background: #0a1a3a10; padding: 6px 14px; border-radius: 30px; font-size: 0.75rem; color:#0a1a3a; text-decoration:none;">
-                                <i class="fas fa-file-pdf"></i> Télécharger la Réalisation 2 (PDF)
-                            </a>
-                        </div>
-                        <!-- Conditions -->
-                        <div class="info-grid">
-                            <div class="info-box">
-                                <h3><i class="fas fa-clipboard-list"></i> Conditions de réalisation</h3>
-                                <p><strong>Ressources fournies :</strong> Infrastructure IRIS, cahier des charges Stadium, accès aux équipements réseau et serveurs.</p>
-                                <p><strong>Résultats attendus :</strong> Chaque douchette est inventoriée automatiquement dans GLPI via l'agent OCS, et toute panne de la borne Wi-Fi déclenche une alerte Nagios vers la DSI pour intervention rapide.</p>
-                            </div>
-                            <div class="info-box">
-                                <h3><i class="fas fa-microchip"></i> Ressources matérielles & logicielles</h3>
-                                <div class="resources-row">
-                                    <div class="resources-col">
-                                        <h4>Matériel</h4>
-                                        <p>Routeur Cisco 2821, Switch Catalyst 2960, Borne WiFi AIR-CAP3502I, Serveur DELL PowerEdge R740</p>
-                                    </div>
-                                    <div class="resources-col">
-                                        <h4>Logiciels</h4>
-                                        <p>VMWare vSphere ESXi 8.1, Windows Server 2022, Debian 12, OCS/GLPI, Zimbra, Nagios, Snort, PuTTY, Wireshark</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Description -->
-                        <div class="info-box" style="margin-bottom: 20px;">
-                            <h3><i class="fas fa-info-circle"></i> Description de la réalisation</h3>
-                            <p>L'inventaire des douchettes est géré dans GLPI grâce aux remontées de l'agent OCS (identification par adresse MAC). Les vendeurs disposent de comptes Zimbra pour la communication logistique. La borne "Shop-Wifi" est supervisée par Nagios, qui alerte la DSI en cas de panne. Une base de connaissances dans GLPI a été créée pour documenter les pannes courantes des scanners ("Panne scan").</p>
-                        </div>
-
-                        <!-- Étapes -->
-                        <div class="etapes-list">
-                            <h3><i class="fas fa-list-ol"></i> Étapes de la mise en place</h3>
-                            <ol>
-                                <li><strong>Inventaire OCS/GLPI :</strong> L'agent OCS remonte l'inventaire des douchettes, permettant de les suivre individuellement dans GLPI.</li>
-                                <li><strong>Communication Zimbra :</strong> Création de comptes de messagerie pour les vendeurs afin de coordonner les réapprovisionnements.</li>
-                                <li><strong>Supervision Nagios :</strong> Surveillance de l'état de la borne Wi-Fi de la boutique avec alertes en cas de panne.</li>
-                                <li><strong>Base de connaissances GLPI :</strong> Création d'articles pour aider à la résolution rapide des problèmes fréquents des douchettes.</li>
-                            </ol>
-                        </div>
-
-                        <!-- Compétences -->
-                        <div class="info-box">
-                            <h3><i class="fas fa-code-branch"></i> Compétences mobilisées</h3>
-                            <div class="skills-container">
-                                <span class="skill-badge">OCS/GLPI</span>
-                                <span class="skill-badge">Inventaire automatisé</span>
-                                <span class="skill-badge">Base de connaissances ITIL</span>
-                                <span class="skill-badge">Nagios supervision</span>
-                                <span class="skill-badge">Alerting DSI</span>
-                                <span class="skill-badge">Zimbra collaboration</span>
-                                <span class="skill-badge">Surveillance Wi-Fi</span>
-                            </div>
-                        </div>
-
-                        <!-- Modalités d'accès -->
-                        <div class="info-box" style="margin-top: 15px; background: #eef2fa;">
-                            <h3><i class="fas fa-folder-open"></i> Modalités d’accès aux productions et documentation</h3>
-                            <p>Les documentations techniques, configurations des ACLs, captures d’écran GLPI, dashboards Nagios et rapports d’inventaire sont disponibles dans le portfolio numérique et accessibles au jury lors de l’épreuve E6.</p>
-                        </div>
+                    
+                    <div class="carte-competence">
+                        <img class="logo-competence" src="Images/logo linux.jpg" 
+                             alt="Logo Linux" width="60" height="60">
+                        <h3 class="nom-competence">Administration Linux</h3>
+                        <p class="niveau-competence">Intermédiaire</p>
+                        <ul class="details-competence">
+                            <li>Services réseau</li>
+                            <li>Shell scripting</li>
+                            <li>Gestion serveurs</li>
+                        </ul>
                     </div>
-                </div>
-            </section>
-
-            <!-- RAPPEL CONTENU ÉPREUVE (portfolio, tableau, oral) -->
-            <section class="section-e6">
-                <h2 class="section_titres">
-                    <i class="fas fa-graduation-cap"></i> Modalités de l'épreuve E6
-                </h2>
-                <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: space-between;">
-                    <div style="flex:1; background: #f8fafd; border-radius: 18px; padding: 25px; text-align: center;">
-                        <i class="fas fa-id-card" style="font-size: 2.5rem; color:#0a1a3a;"></i>
-                        <h3 style="margin: 15px 0;">Portfolio numérique</h3>
-                        <p>Présentation personnelle, compétences, projets, expériences de stage, veille technologique.</p>
-                    </div>
-                    <div style="flex:1; background: #f8fafd; border-radius: 18px; padding: 25px; text-align: center;">
-                        <i class="fas fa-table-list" style="font-size: 2.5rem; color:#0a1a3a;"></i>
-                        <h3 style="margin: 15px 0;">Tableau de synthèse</h3>
-                        <p>Liste des réalisations professionnelles et compétences du référentiel associées.</p>
-                    </div>
-                    <div style="flex:1; background: #f8fafd; border-radius: 18px; padding: 25px; text-align: center;">
-                        <i class="fas fa-chalkboard-user" style="font-size: 2.5rem; color:#0a1a3a;"></i>
-                        <h3 style="margin: 15px 0;">Entretien oral</h3>
-                        <p>Présentation + questions du jury (durée indicative totale ~40 minutes).</p>
+                    
+                    <div class="carte-competence">
+                        <img class="logo-competence" src="Images/logo Windows Server 2022.jpg" 
+                             alt="Logo Windows Server" width="60" height="60">
+                        <h3 class="nom-competence">Windows Server</h3>
+                        <p class="niveau-competence">Intermédiaire</p>
+                        <ul class="details-competence">
+                            <li>Active Directory</li>
+                            <li>GPO</li>
+                            <li>DHCP/DNS</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -759,24 +547,28 @@
                     <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
+            
             <div class="footer-section">
                 <h3 class="footer-titre"><i class="fas fa-star"></i> Expertises</h3>
                 <ul class="footer-competences">
-                    <li><i class="fas fa-network-wired"></i> Réseaux Cisco & Sécurité</li>
-                    <li><i class="fas fa-shield-alt"></i> ACLs / VLAN / GPO</li>
-                    <li><i class="fas fa-server"></i> Windows Server / Linux</li>
-                    <li><i class="fas fa-chart-line"></i> Supervision Nagios, GLPI</li>
+                    <li><i class="fas fa-network-wired"></i> Réseaux Cisco & Fortinet</li>
+                    <li><i class="fas fa-shield-alt"></i> Sécurité informatique</li>
+                    <li><i class="fas fa-server"></i> Administration systèmes</li>
+                    <li><i class="fas fa-building"></i> Expérience en milieu bancaire</li>
                 </ul>
             </div>
+            
             <div class="footer-section">
                 <h3 class="footer-titre"><i class="fas fa-bullseye"></i> Objectifs 2025</h3>
                 <ul class="footer-certifications">
                     <li><i class="fas fa-graduation-cap"></i> BTS SIO SISR</li>
-                    <li><i class="fas fa-certificate"></i> Certification Fortinet NSE4</li>
+                    <li><i class="fas fa-certificate"></i> Stage BADR Algérie</li>
+                    <li><i class="fas fa-shield-alt"></i> Fortinet NSE4</li>
                     <li><i class="fas fa-globe"></i> Carrière internationale</li>
                 </ul>
             </div>
         </div>
+        
         <div class="footer-bas">
             <div class="reseaux-footer">
                 <a href="https://www.linkedin.com/in/bilal-rouane-311133340/" 
@@ -786,6 +578,7 @@
                     <img src="Images/LinkedIn_icon.svg" alt="LinkedIn" width="30">
                 </a>
             </div>
+            
             <div class="copyright">
                 <p>© 2025 - Bilal Rouane - Tous droits réservés</p>
                 <p><i class="fas fa-envelope"></i> bilal.rouane.pro@gmail.com | <i class="fas fa-phone"></i> +33743290209</p>
@@ -794,19 +587,21 @@
     </footer>
 
     <script>
-        // Mise en surbrillance de la page active
+        // Script pour mettre en surbrillance la page active
         document.addEventListener('DOMContentLoaded', function() {
             const currentPage = window.location.pathname.split('/').pop();
             const navLinks = document.querySelectorAll('.nav-link');
+            
             navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                if (link.getAttribute('href') === currentPage || 
+                    (currentPage === '' && link.getAttribute('href') === 'index.html')) {
                     link.classList.add('active');
-                } else if (currentPage === 'e6.html' && href === 'e6.html') {
-                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
                 }
             });
         });
     </script>
+    
 </body>
 </html>
