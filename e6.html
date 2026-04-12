@@ -17,6 +17,567 @@
     
     <!-- Font Awesome pour icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== STYLES GÉNÉRAUX ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f8;
+            color: #1a2a3a;
+            line-height: 1.5;
+        }
+
+        .fond {
+            background: linear-gradient(135deg, #f0f2f8 0%, #e8ecf5 100%);
+            min-height: 100vh;
+        }
+
+        .contenu {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 15px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .menu li {
+            margin: 0 5px;
+        }
+
+        .menu li a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .menu li a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: #0a1a3a;
+            color: white;
+            border-radius: 30px;
+        }
+
+        .logo img {
+            height: 45px;
+            vertical-align: middle;
+        }
+
+        /* ===== BANNIÈRE BLEU FONCÉ - TEXTE BLANC ===== */
+        #titre-e6 {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 50px 30px;
+            background: #0a1a3a;
+            background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
+            border-radius: 25px;
+            color: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .page-titre {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .page-sous-titre {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            color: white;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section-e6 {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .section-e6:hover {
+            transform: translateY(-3px);
+        }
+
+        .section_titres {
+            font-size: 1.8rem;
+            color: #0a1a3a;
+            border-left: 5px solid #0a1a3a;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .section_titres i {
+            color: #0a1a3a;
+            margin-right: 12px;
+        }
+
+        /* ===== PRÉSENTATION ===== */
+        .e6-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #1e2e3e;
+        }
+
+        .e6-description p {
+            margin-bottom: 18px;
+        }
+
+        .formation-info {
+            background: #eef2fa;
+            border-left: 5px solid #0a1a3a;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .formation-info i {
+            color: #0a1a3a;
+            margin-right: 10px;
+        }
+
+        /* ===== COMPÉTENCES ===== */
+        .competences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .competence-category {
+            background: #f8fafd;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e8edf5;
+        }
+
+        .competence-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #0a1a3a;
+        }
+
+        .competence-header {
+            background: linear-gradient(135deg, #0a1a3a, #0a1a3a);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .competence-header i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .competence-header h3 {
+            font-size: 1.3rem;
+        }
+
+        .competence-list {
+            list-style: none;
+            padding: 20px;
+        }
+
+        .competence-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #2c3e50;
+        }
+
+        .competence-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #0a1a3a;
+            font-weight: bold;
+        }
+
+        /* ===== MODALITÉS ===== */
+        .modalites-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .modalite-overview p {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .epreuve-structure {
+            background: #f8fafd;
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid #e8edf5;
+        }
+
+        .epreuve-structure h3 {
+            color: #0a1a3a;
+            margin-bottom: 15px;
+        }
+
+        .phases-epreuve {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .phases-epreuve {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .phase {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            border-left: 4px solid #0a1a3a;
+        }
+
+        .phase h4 {
+            color: #0a1a3a;
+            margin-bottom: 12px;
+        }
+
+        .phase-details p {
+            margin-bottom: 8px;
+            color: #4a627a;
+        }
+
+        /* ===== OBJECTIFS ===== */
+        .objectifs-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .objectif-card {
+            background: #f8fafd;
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e8edf5;
+        }
+
+        .objectif-card:hover {
+            transform: translateY(-5px);
+            border-color: #0a1a3a;
+        }
+
+        .objectif-card i {
+            font-size: 2.5rem;
+            color: #0a1a3a;
+            margin-bottom: 15px;
+        }
+
+        .objectif-card h3 {
+            color: #0a1a3a;
+            margin-bottom: 10px;
+        }
+
+        .objectif-card p {
+            color: #4a627a;
+        }
+
+        .objectif-details {
+            background: #eef2fa;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border-left: 5px solid #0a1a3a;
+        }
+
+        .objectif-details p {
+            color: #1e2e3e;
+            font-size: 1.05rem;
+        }
+
+        /* ===== PRÉPARATION ===== */
+        .preparation-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .preparation-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .domaines-techniques h3, .conseils-preparation h3 {
+            color: #0a1a3a;
+            margin-bottom: 20px;
+        }
+
+        .domaines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .domaine {
+            background: #f8fafd;
+            border-radius: 15px;
+            padding: 18px;
+            border: 1px solid #e8edf5;
+        }
+
+        .domaine h4 {
+            color: #0a1a3a;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .domaine h4 i {
+            color: #0a1a3a;
+        }
+
+        .domaine ul {
+            list-style: none;
+            padding-left: 5px;
+        }
+
+        .domaine ul li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #4a627a;
+        }
+
+        .domaine ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0a1a3a;
+            font-weight: bold;
+        }
+
+        .conseils-preparation {
+            background: #f8fafd;
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid #e8edf5;
+        }
+
+        .conseils-list {
+            list-style: none;
+        }
+
+        .conseils-list li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #2c3e50;
+        }
+
+        .conseils-list li i {
+            color: #0a1a3a;
+            font-size: 1.1rem;
+        }
+
+        /* ===== PROJETS ===== */
+        .projets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .projet-card {
+            background: #f8fafd;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e8edf5;
+        }
+
+        .projet-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #0a1a3a;
+        }
+
+        .projet-header {
+            background: linear-gradient(135deg, #0a1a3a, #0a1a3a);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .projet-header i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .projet-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .projet-content {
+            padding: 20px;
+        }
+
+        .projet-content p {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .projet-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-badge {
+            background: white;
+            color: #0a1a3a;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            border: 1px solid #0a1a3a;
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            background: #0a1a3a;
+            color: white;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, #0a1a3a, #0a1222);
+            color: #e0e7ff;
+            margin-top: 60px;
+            padding: 45px 20px 25px;
+        }
+
+        .footer-contenu {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-titre {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-menu, .footer-competences, .footer-certifications {
+            list-style: none;
+        }
+
+        .footer-menu li, .footer-competences li, .footer-certifications li {
+            margin-bottom: 10px;
+        }
+
+        .footer-menu a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-menu a:hover {
+            color: white;
+        }
+
+        .footer-bas {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #2d3a5e;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .reseaux-footer {
+            margin-bottom: 15px;
+        }
+
+        .reseaux-footer a img {
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s;
+        }
+
+        .reseaux-footer a:hover img {
+            transform: scale(1.1);
+        }
+
+        .copyright p {
+            color: #8a9bb5;
+            margin: 5px 0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .page-titre {
+                font-size: 1.8rem;
+            }
+            .section-e6 {
+                padding: 20px;
+            }
+            .section_titres {
+                font-size: 1.4rem;
+            }
+            .menu {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .menu li a {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body class="fond">
 
@@ -72,7 +633,7 @@
         <div class="contenu">
             <span id="saut_menu"></span>
             
-            <!-- Section Titre -->
+            <!-- Section Titre - BANNIÈRE BLEU FONCÉ -->
             <section id="titre-e6">
                 <h1 class="page-titre">Épreuve E6 – Administration des systèmes et des réseaux</h1>
                 <p class="page-sous-titre">Option SISR – Solutions d'Infrastructure, Systèmes et Réseaux</p>
@@ -292,12 +853,12 @@
                     <div class="conseils-preparation">
                         <h3><i class="fas fa-lightbulb"></i> Conseils de préparation :</h3>
                         <ul class="conseils-list">
-                            <li><i class="fas fa-check"></i> Maîtriser les fondamentaux des réseaux TCP/IP</li>
-                            <li><i class="fas fa-check"></i> Pratiquer régulièrement sur des labs techniques</li>
-                            <li><i class="fas fa-check"></i> Documenter soigneusement toutes ses réalisations</li>
-                            <li><i class="fas fa-check"></i> Préparer des scénarios de dépannage typiques</li>
-                            <li><i class="fas fa-check"></i> Savoir expliquer ses choix techniques simplement</li>
-                            <li><i class="fas fa-check"></i> Gérer son stress et son temps pendant l'épreuve</li>
+                            <li><i class="fas fa-check-circle"></i> Maîtriser les fondamentaux des réseaux TCP/IP</li>
+                            <li><i class="fas fa-check-circle"></i> Pratiquer régulièrement sur des labs techniques</li>
+                            <li><i class="fas fa-check-circle"></i> Documenter soigneusement toutes ses réalisations</li>
+                            <li><i class="fas fa-check-circle"></i> Préparer des scénarios de dépannage typiques</li>
+                            <li><i class="fas fa-check-circle"></i> Savoir expliquer ses choix techniques simplement</li>
+                            <li><i class="fas fa-check-circle"></i> Gérer son stress et son temps pendant l'épreuve</li>
                         </ul>
                     </div>
                 </div>
@@ -386,7 +947,6 @@
                     <li><a href="e5.html"><i class="fas fa-tasks"></i> Épreuve E5</a></li>
                     <li><a href="e6.html"><i class="fas fa-server"></i> Épreuve E6</a></li>
                     <li><a href="veille.html"><i class="fas fa-binoculars"></i> Veille</a></li>
-                    <li><a href="entreprise.html"><i class="fas fa-building"></i> Entreprise</a></li>
                     <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
@@ -397,7 +957,7 @@
                     <li><i class="fas fa-network-wired"></i> Réseaux Cisco & Fortinet</li>
                     <li><i class="fas fa-shield-alt"></i> Sécurité informatique</li>
                     <li><i class="fas fa-server"></i> Administration systèmes</li>
-                    <li><i class="fas fa-flask"></i> Riguer scientifique</li>
+                    <li><i class="fas fa-flask"></i> Rigueur scientifique</li>
                 </ul>
             </div>
             
