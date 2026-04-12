@@ -90,28 +90,31 @@
             vertical-align: middle;
         }
 
-        /* Section Titre */
+        /* ===== BANNIÈRE BLEU FONCÉ + TEXTE BLANC ===== */
         #titre-veille {
             text-align: center;
             margin-bottom: 50px;
-            padding: 50px 30px;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a3f5e 100%);
+            padding: 60px 30px;
+            background: #0a1a3a;  /* Bleu très foncé */
+            background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
             border-radius: 25px;
             color: white;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
         .page-titre {
             font-size: 3rem;
             margin-bottom: 15px;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            color: white;
         }
 
         .page-sous-titre {
             font-size: 1.2rem;
             opacity: 0.95;
             font-weight: 400;
+            color: white;
         }
 
         /* Sections de veille */
@@ -131,14 +134,14 @@
         .section_titres {
             font-size: 1.8rem;
             color: #1a2a4f;
-            border-left: 5px solid #4a6fa5;
+            border-left: 5px solid #0a1a3a;
             padding-left: 20px;
             margin-bottom: 25px;
             font-weight: 600;
         }
 
         .section_titres i {
-            color: #4a6fa5;
+            color: #0a1a3a;
             margin-right: 12px;
         }
 
@@ -155,7 +158,7 @@
 
         .importance-veille {
             background: #eef2fa;
-            border-left: 5px solid #4a6fa5;
+            border-left: 5px solid #0a1a3a;
             padding: 20px 25px;
             border-radius: 15px;
             margin-top: 20px;
@@ -205,7 +208,7 @@
         .etape-num {
             width: 42px;
             height: 42px;
-            background: linear-gradient(135deg, #4a6fa5, #2c3e66);
+            background: linear-gradient(135deg, #0a1a3a, #1e3a5f);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -253,12 +256,12 @@
         .outil:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-color: #4a6fa5;
+            border-color: #0a1a3a;
         }
 
         .outil i {
             font-size: 2.5rem;
-            color: #4a6fa5;
+            color: #0a1a3a;
             margin-bottom: 12px;
         }
 
@@ -294,7 +297,7 @@
         }
 
         .domaine-header {
-            background: linear-gradient(135deg, #3a6090, #1e3a5f);
+            background: linear-gradient(135deg, #0a1a3a, #1e3a5f);
             color: white;
             padding: 25px 20px;
             text-align: center;
@@ -330,7 +333,7 @@
         .source-badge {
             display: inline-block;
             background: #eef2fa;
-            color: #2c5282;
+            color: #0a1a3a;
             padding: 5px 14px;
             border-radius: 25px;
             margin: 5px 5px 0 0;
@@ -370,7 +373,7 @@
         }
 
         .sources-list a:hover {
-            color: #4a6fa5;
+            color: #0a1a3a;
             text-decoration: underline;
         }
 
@@ -425,12 +428,12 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #4a6fa5, #2c5282);
+            background: linear-gradient(90deg, #0a1a3a, #1e3a5f);
         }
 
         .actualite-date {
             font-size: 0.85rem;
-            color: #4a6fa5;
+            color: #0a1a3a;
             font-weight: bold;
             margin-bottom: 12px;
             letter-spacing: 0.5px;
@@ -451,7 +454,7 @@
         .tag {
             display: inline-block;
             background: #e2e8f0;
-            color: #2c5282;
+            color: #0a1a3a;
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
@@ -461,7 +464,7 @@
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #0f1a2e, #0a1222);
+            background: linear-gradient(135deg, #0a1a3a, #0a1222);
             color: #e0e7ff;
             margin-top: 60px;
             padding: 45px 20px 25px;
@@ -570,6 +573,7 @@
         <div class="contenu">
             <span id="saut_menu"></span>
             
+            <!-- Bannière avec fond bleu foncé et texte blanc -->
             <section id="titre-veille">
                 <h1 class="page-titre">Veille Technologique</h1>
                 <p class="page-sous-titre">Suivez mon analyse des tendances et innovations dans les domaines de l'infrastructure, des réseaux et de la cybersécurité.</p>
