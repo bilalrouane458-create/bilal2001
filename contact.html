@@ -16,7 +16,7 @@
     
     <style>
         .fond {
-            background: linear-gradient(135deg, #f5f7fc 0%, #eef2f8 100%);
+            background: linear-gradient(135deg, #f0f2f8 0%, #e8ecf5 100%);
             min-height: 100vh;
         }
         .contenu {
@@ -24,27 +24,36 @@
             margin: 0 auto;
             padding: 20px;
         }
+        
+        /* BANNIÈRE BLEU FONCÉ - TEXTE BLANC */
         #titre-contact {
             text-align: center;
             margin-bottom: 50px;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #2c3e66 0%, #1a2a4a 100%);
-            border-radius: 20px;
+            padding: 50px 30px;
+            background: #0a1a3a;  /* Bleu très foncé */
+            background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
+            border-radius: 25px;
             color: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
         .page-titre {
             font-size: 3rem;
             margin-bottom: 15px;
             font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         }
         .page-sous-titre {
             font-size: 1.2rem;
             opacity: 0.95;
+            color: white;
         }
+        
+        /* Sections */
         .section-contact {
             background: white;
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 25px;
+            padding: 35px;
             margin-bottom: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
@@ -54,15 +63,18 @@
         }
         .section_titres {
             font-size: 1.8rem;
-            color: #2c3e66;
-            border-left: 5px solid #2c3e66;
+            color: #0a1a3a;
+            border-left: 5px solid #0a1a3a;
             padding-left: 20px;
             margin-bottom: 30px;
+            font-weight: 600;
         }
         .section_titres i {
-            color: #2c3e66;
+            color: #0a1a3a;
             margin-right: 10px;
         }
+        
+        /* Formulaire */
         .formulaire-container {
             max-width: 800px;
             margin: 0 auto;
@@ -79,25 +91,25 @@
         }
         .form-group label {
             font-weight: 600;
-            color: #2c3e66;
+            color: #0a1a3a;
             font-size: 0.95rem;
         }
         .form-group label i {
             margin-right: 8px;
-            color: #2c3e66;
+            color: #0a1a3a;
         }
         .form-group input, .form-group select, .form-group textarea {
             padding: 12px 15px;
             border: 2px solid #e0e6ed;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 1rem;
             transition: all 0.3s ease;
             font-family: inherit;
         }
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
-            border-color: #2c3e66;
-            box-shadow: 0 0 0 3px rgba(44,62,102,0.1);
+            border-color: #0a1a3a;
+            box-shadow: 0 0 0 3px rgba(10,26,58,0.1);
         }
         .form-row {
             display: grid;
@@ -124,11 +136,12 @@
             margin-top: 20px;
         }
         .btn-submit {
-            background: linear-gradient(135deg, #2c3e66, #1a2a4a);
+            background: linear-gradient(135deg, #0a1a3a, #0a1a3a);
+            background-color: #0a1a3a;
             color: white;
             padding: 14px 30px;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
@@ -136,15 +149,16 @@
             flex: 1;
         }
         .btn-submit:hover {
+            background: #1e3a5f;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(44,62,102,0.3);
+            box-shadow: 0 5px 15px rgba(10,26,58,0.3);
         }
         .btn-reset {
             background: #f0f2f5;
-            color: #2c3e66;
+            color: #0a1a3a;
             padding: 14px 30px;
             border: 2px solid #e0e6ed;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
@@ -153,6 +167,8 @@
         .btn-reset:hover {
             background: #e0e6ed;
         }
+        
+        /* Coordonnées */
         .coordonnees-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -164,18 +180,21 @@
             align-items: center;
             gap: 20px;
             padding: 20px;
-            background: #f8f9fa;
-            border-radius: 15px;
+            background: #f8fafd;
+            border-radius: 18px;
             transition: all 0.3s ease;
+            border: 1px solid #e8edf5;
         }
         .coordonnee-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #0a1a3a;
         }
         .coordonnee-icon {
             width: 55px;
             height: 55px;
-            background: linear-gradient(135deg, #2c3e66, #1a2a4a);
+            background: linear-gradient(135deg, #0a1a3a, #0a1a3a);
+            background-color: #0a1a3a;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -184,18 +203,18 @@
             font-size: 1.5rem;
         }
         .coordonnee-content h3 {
-            color: #2c3e66;
+            color: #0a1a3a;
             margin-bottom: 5px;
             font-size: 1.1rem;
         }
         .coordonnee-link {
-            color: #2c3e66;
+            color: #0a1a3a;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
         .coordonnee-link:hover {
-            color: #4a6a9e;
+            color: #2c5282;
             text-decoration: underline;
         }
         .coordonnee-content p {
@@ -204,19 +223,20 @@
             margin-top: 5px;
         }
         .localisation-info {
-            background: #f8f9fa;
-            border-radius: 15px;
+            background: #f8fafd;
+            border-radius: 18px;
             padding: 25px;
             display: grid;
             grid-template-columns: 1fr auto;
             gap: 30px;
+            border: 1px solid #e8edf5;
         }
         .localisation-text h3 {
-            color: #2c3e66;
+            color: #0a1a3a;
             margin-bottom: 15px;
         }
         .mobilite-info h4 {
-            color: #2c3e66;
+            color: #0a1a3a;
             margin-bottom: 10px;
         }
         .mobilite-info ul {
@@ -228,10 +248,13 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            color: #2c3e50;
         }
         .mobilite-info li i {
-            color: #28a745;
+            color: #0a1a3a;
         }
+        
+        /* Réseaux */
         .reseaux-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -242,21 +265,24 @@
             align-items: center;
             gap: 15px;
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 18px;
             text-decoration: none;
             transition: all 0.3s ease;
-            background: #f8f9fa;
+            background: #f8fafd;
+            border: 1px solid #e8edf5;
         }
         .reseau-card.linkedin:hover {
-            background: #0077b5;
+            background: #0a1a3a;
             color: white;
+            border-color: #0a1a3a;
         }
         .reseau-card.email:hover {
-            background: #dc3545;
+            background: #0a1a3a;
             color: white;
+            border-color: #0a1a3a;
         }
         .reseau-card.portfolio, .reseau-card.cv {
-            background: #f8f9fa;
+            background: #f8fafd;
             cursor: default;
         }
         .reseau-card:hover .reseau-icon i,
@@ -267,13 +293,13 @@
         }
         .reseau-icon i {
             font-size: 2rem;
-            color: #2c3e66;
+            color: #0a1a3a;
             transition: color 0.3s ease;
         }
         .reseau-content h3 {
             font-size: 1.1rem;
             margin-bottom: 5px;
-            color: #2c3e66;
+            color: #0a1a3a;
         }
         .reseau-content p {
             font-size: 0.85rem;
@@ -282,9 +308,11 @@
         }
         .reseau-link {
             font-size: 0.8rem;
-            color: #2c3e66;
+            color: #0a1a3a;
             font-weight: 600;
         }
+        
+        /* Disponibilités */
         .disponibilite-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -296,16 +324,18 @@
             }
         }
         .disponibilite-card {
-            background: #f8f9fa;
-            border-radius: 15px;
+            background: #f8fafd;
+            border-radius: 18px;
             padding: 25px;
+            border: 1px solid #e8edf5;
         }
         .disponibilite-card h3 {
-            color: #2c3e66;
+            color: #0a1a3a;
             margin-bottom: 15px;
         }
         .disponibilite-card h3 i {
             margin-right: 10px;
+            color: #0a1a3a;
         }
         .disponibilite-list {
             list-style: none;
@@ -317,9 +347,10 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            color: #2c3e50;
         }
         .disponibilite-list li i {
-            color: #28a745;
+            color: #0a1a3a;
         }
         .projets-interets {
             display: flex;
@@ -329,15 +360,23 @@
         }
         .projet-badge {
             background: white;
-            color: #2c3e66;
+            color: #0a1a3a;
             padding: 8px 15px;
             border-radius: 25px;
             font-size: 0.85rem;
-            border: 1px solid #2c3e66;
+            border: 1px solid #0a1a3a;
+            transition: all 0.3s ease;
         }
+        .projet-badge:hover {
+            background: #0a1a3a;
+            color: white;
+        }
+        
+        /* Contact direct */
         .contact-direct {
-            background: linear-gradient(135deg, #2c3e66, #1a2a4a);
-            border-radius: 15px;
+            background: linear-gradient(135deg, #0a1a3a, #0a1a3a);
+            background-color: #0a1a3a;
+            border-radius: 18px;
             padding: 25px;
             color: white;
             margin-top: 30px;
@@ -345,6 +384,12 @@
         .contact-direct h3 {
             color: white;
             margin-bottom: 15px;
+        }
+        .contact-direct h3 i {
+            color: white;
+        }
+        .contact-direct p {
+            color: #e0e7ff;
         }
         .contact-options {
             display: flex;
@@ -358,7 +403,7 @@
             gap: 12px;
             padding: 12px 20px;
             background: rgba(255,255,255,0.1);
-            border-radius: 10px;
+            border-radius: 12px;
             text-decoration: none;
             color: white;
             transition: all 0.3s ease;
@@ -367,21 +412,122 @@
             background: rgba(255,255,255,0.2);
             transform: translateX(5px);
         }
+        
+        /* Navigation active */
         .active {
-            background: #2c3e66 !important;
+            background: #0a1a3a !important;
             color: white !important;
             border-radius: 25px;
         }
         .nav-link.active {
-            background: #2c3e66;
+            background: #0a1a3a;
             color: white;
             border-radius: 25px;
         }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 15px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .menu li {
+            margin: 0 5px;
+        }
+        .menu li a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .menu li a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        .logo img {
+            height: 45px;
+            vertical-align: middle;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0a1a3a, #0a1222);
+            color: #e0e7ff;
+            margin-top: 60px;
+            padding: 45px 20px 25px;
+        }
+        .footer-contenu {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-titre {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .footer-menu, .footer-competences, .footer-certifications {
+            list-style: none;
+        }
+        .footer-menu li, .footer-competences li, .footer-certifications li {
+            margin-bottom: 10px;
+        }
+        .footer-menu a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-menu a:hover {
+            color: white;
+        }
+        .footer-bas {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #2d3a5e;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .reseaux-footer {
+            margin-bottom: 15px;
+        }
+        .reseaux-footer a img {
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s;
+        }
+        .reseaux-footer a:hover img {
+            transform: scale(1.1);
+        }
+        .copyright p {
+            color: #8a9bb5;
+            margin: 5px 0;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
             .page-titre { font-size: 2rem; }
             .form-row { grid-template-columns: 1fr; }
             .form-actions { flex-direction: column; }
             .localisation-info { grid-template-columns: 1fr; }
+            .section-contact { padding: 20px; }
         }
     </style>
 </head>
@@ -409,6 +555,7 @@
         <div class="contenu">
             <span id="saut_menu"></span>
             
+            <!-- Bannière bleu foncé / texte blanc -->
             <section id="titre-contact">
                 <h1 class="page-titre">Contact</h1>
                 <p class="page-sous-titre">N'hésitez pas à me contacter pour discuter de projets ou d'opportunités</p>
@@ -505,9 +652,9 @@
                         <div class="mobilite-info">
                             <h4><i class="fas fa-car"></i> Mobilité :</h4>
                             <ul>
-                                <li><i class="fas fa-check"></i> Île-de-France</li>
-                                <li><i class="fas fa-check"></i> Télétravail partiel</li>
-                                <li><i class="fas fa-check"></i> Déplacements occasionnels</li>
+                                <li><i class="fas fa-check-circle"></i> Île-de-France</li>
+                                <li><i class="fas fa-check-circle"></i> Télétravail partiel</li>
+                                <li><i class="fas fa-check-circle"></i> Déplacements occasionnels</li>
                             </ul>
                         </div>
                     </div>
@@ -523,7 +670,7 @@
                             <div class="reseau-content">
                                 <h3>LinkedIn</h3>
                                 <p>Profil professionnel et expériences</p>
-                                <span class="reseau-link">Visiter mon profil</span>
+                                <span class="reseau-link">Visiter mon profil →</span>
                             </div>
                         </a>
                         <a href="mailto:bilal.rouane.pro@gmail.com" class="reseau-card email">
@@ -531,7 +678,7 @@
                             <div class="reseau-content">
                                 <h3>Email direct</h3>
                                 <p>Contact professionnel privilégié</p>
-                                <span class="reseau-link">Envoyer un email</span>
+                                <span class="reseau-link">Envoyer un email →</span>
                             </div>
                         </a>
                         <div class="reseau-card portfolio">
@@ -561,10 +708,10 @@
                         <h3><i class="fas fa-graduation-cap"></i> Recherche d'alternance</h3>
                         <p>Je suis actuellement à la recherche d'une <strong>alternance en administration systèmes et réseaux</strong> pour la rentrée 2025.</p>
                         <ul class="disponibilite-list">
-                            <li><i class="fas fa-check"></i> Rythme : 3 semaines entreprise / 1 semaine école</li>
-                            <li><i class="fas fa-check"></i> Durée : 12 à 24 mois</li>
-                            <li><i class="fas fa-check"></i> Secteurs : Tous secteurs d'activité</li>
-                            <li><i class="fas fa-check"></i> Localisation : Paris et Île-de-France</li>
+                            <li><i class="fas fa-check-circle"></i> Rythme : 3 semaines entreprise / 1 semaine école</li>
+                            <li><i class="fas fa-check-circle"></i> Durée : 12 à 24 mois</li>
+                            <li><i class="fas fa-check-circle"></i> Secteurs : Tous secteurs d'activité</li>
+                            <li><i class="fas fa-check-circle"></i> Localisation : Paris et Île-de-France</li>
                         </ul>
                     </div>
                     <div class="disponibilite-card">
