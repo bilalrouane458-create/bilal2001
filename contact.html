@@ -17,6 +17,467 @@
     
     <!-- Font Awesome pour icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Styles supplémentaires pour la page contact */
+        .fond {
+            background: linear-gradient(135deg, #f5f7fc 0%, #eef2f8 100%);
+            min-height: 100vh;
+        }
+        
+        .contenu {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        #titre-contact {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #2c3e66 0%, #1a2a4a 100%);
+            border-radius: 20px;
+            color: white;
+        }
+        
+        .page-titre {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .page-sous-titre {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        
+        .section-contact {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .section-contact:hover {
+            transform: translateY(-3px);
+        }
+        
+        .section_titres {
+            font-size: 1.8rem;
+            color: #2c3e66;
+            border-left: 5px solid #2c3e66;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .section_titres i {
+            color: #2c3e66;
+            margin-right: 10px;
+        }
+        
+        /* Formulaire */
+        .formulaire-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: #2c3e66;
+            font-size: 0.95rem;
+        }
+        
+        .form-group label i {
+            margin-right: 8px;
+            color: #2c3e66;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 2px solid #e0e6ed;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2c3e66;
+            box-shadow: 0 0 0 3px rgba(44,62,102,0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .checkbox {
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .checkbox input {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .checkbox label {
+            cursor: pointer;
+            font-weight: normal;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(135deg, #2c3e66, #1a2a4a);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44,62,102,0.3);
+        }
+        
+        .btn-reset {
+            background: #f0f2f5;
+            color: #2c3e66;
+            padding: 14px 30px;
+            border: 2px solid #e0e6ed;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-reset:hover {
+            background: #e0e6ed;
+        }
+        
+        /* Coordonnées */
+        .coordonnees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .coordonnee-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .coordonnee-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .coordonnee-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #2c3e66, #1a2a4a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .coordonnee-content h3 {
+            color: #2c3e66;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .coordonnee-link {
+            color: #2c3e66;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .coordonnee-link:hover {
+            color: #4a6a9e;
+            text-decoration: underline;
+        }
+        
+        .coordonnee-content p {
+            color: #6c757d;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+        
+        .localisation-info {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 30px;
+        }
+        
+        .localisation-text h3 {
+            color: #2c3e66;
+            margin-bottom: 15px;
+        }
+        
+        .mobilite-info h4 {
+            color: #2c3e66;
+            margin-bottom: 10px;
+        }
+        
+        .mobilite-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .mobilite-info li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .mobilite-info li i {
+            color: #28a745;
+        }
+        
+        /* Réseaux sociaux */
+        .reseaux-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        
+        .reseau-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+        
+        .reseau-card.linkedin:hover {
+            background: #0077b5;
+            color: white;
+        }
+        
+        .reseau-card.email:hover {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .reseau-card.portfolio {
+            background: #f8f9fa;
+            cursor: default;
+        }
+        
+        .reseau-card.cv {
+            background: #f8f9fa;
+            cursor: default;
+        }
+        
+        .reseau-card:hover .reseau-icon i,
+        .reseau-card:hover .reseau-content h3,
+        .reseau-card:hover .reseau-content p,
+        .reseau-card:hover .reseau-link {
+            color: white;
+        }
+        
+        .reseau-icon i {
+            font-size: 2rem;
+            color: #2c3e66;
+            transition: color 0.3s ease;
+        }
+        
+        .reseau-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #2c3e66;
+        }
+        
+        .reseau-content p {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+        
+        .reseau-link {
+            font-size: 0.8rem;
+            color: #2c3e66;
+            font-weight: 600;
+        }
+        
+        /* Disponibilité */
+        .disponibilite-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .disponibilite-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .disponibilite-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+        }
+        
+        .disponibilite-card h3 {
+            color: #2c3e66;
+            margin-bottom: 15px;
+        }
+        
+        .disponibilite-card h3 i {
+            margin-right: 10px;
+        }
+        
+        .disponibilite-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+        
+        .disponibilite-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .disponibilite-list li i {
+            color: #28a745;
+        }
+        
+        .projets-interets {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .projet-badge {
+            background: white;
+            color: #2c3e66;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            border: 1px solid #2c3e66;
+        }
+        
+        .contact-direct {
+            background: linear-gradient(135deg, #2c3e66, #1a2a4a);
+            border-radius: 15px;
+            padding: 25px;
+            color: white;
+        }
+        
+        .contact-direct h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .contact-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-option:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+        
+        .active {
+            background: #2c3e66 !important;
+            color: white !important;
+            border-radius: 25px;
+        }
+        
+        .nav-link.active {
+            background: #2c3e66;
+            color: white;
+            border-radius: 25px;
+        }
+        
+        @media (max-width: 768px) {
+            .page-titre {
+                font-size: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .localisation-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body class="fond">
 
@@ -44,12 +505,12 @@
                 </li>
                 <li>
                     <a href="e4.html" class="nav-link">
-                        <i class="fas fa-tasks"></i> Épreuve E5
+                        <i class="fas fa-tasks"></i> Épreuve E4
                     </a>
                 </li>
                 <li>
                     <a href="e5.html" class="nav-link">
-                        <i class="fas fa-server"></i> Épreuve E6
+                        <i class="fas fa-server"></i> Épreuve E5
                     </a>
                 </li>
                 <li>
@@ -285,51 +746,49 @@
                 </h2>
                 
                 <div class="disponibilite-container">
-                    <div class="disponibilite-content">
-                        <div class="disponibilite-card">
-                            <h3><i class="fas fa-graduation-cap"></i> Recherche d'alternance</h3>
-                            <p>Je suis actuellement à la recherche d'une <strong>alternance en administration systèmes et réseaux</strong> pour la rentrée 2025.</p>
-                            <ul class="disponibilite-list">
-                                <li><i class="fas fa-check"></i> Rythme : 3 semaines entreprise / 1 semaine école</li>
-                                <li><i class="fas fa-check"></i> Durée : 12 à 24 mois</li>
-                                <li><i class="fas fa-check"></i> Secteurs : Tous secteurs d'activité</li>
-                                <li><i class="fas fa-check"></i> Localisation : Paris et Île-de-France</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="disponibilite-card">
-                            <h3><i class="fas fa-briefcase"></i> Projets professionnels</h3>
-                            <p>Je suis intéressé par les projets dans les domaines suivants :</p>
-                            <div class="projets-interets">
-                                <span class="projet-badge">Administration réseaux</span>
-                                <span class="projet-badge">Cybersécurité</span>
-                                <span class="projet-badge">Infrastructure cloud</span>
-                                <span class="projet-badge">Virtualisation</span>
-                                <span class="projet-badge">Support technique</span>
-                                <span class="projet-badge">Projets internationaux</span>
-                            </div>
-                        </div>
+                    <div class="disponibilite-card">
+                        <h3><i class="fas fa-graduation-cap"></i> Recherche d'alternance</h3>
+                        <p>Je suis actuellement à la recherche d'une <strong>alternance en administration systèmes et réseaux</strong> pour la rentrée 2025.</p>
+                        <ul class="disponibilite-list">
+                            <li><i class="fas fa-check"></i> Rythme : 3 semaines entreprise / 1 semaine école</li>
+                            <li><i class="fas fa-check"></i> Durée : 12 à 24 mois</li>
+                            <li><i class="fas fa-check"></i> Secteurs : Tous secteurs d'activité</li>
+                            <li><i class="fas fa-check"></i> Localisation : Paris et Île-de-France</li>
+                        </ul>
                     </div>
                     
-                    <div class="contact-direct">
-                        <h3><i class="fas fa-comment-dots"></i> Contact direct</h3>
-                        <p>Pour un échange plus rapide, n'hésitez pas à :</p>
-                        <div class="contact-options">
-                            <a href="tel:+33743290209" class="contact-option">
-                                <i class="fas fa-phone"></i>
-                                <span>M'appeler directement</span>
-                            </a>
-                            <a href="mailto:bilal.rouane.pro@gmail.com" class="contact-option">
-                                <i class="fas fa-envelope"></i>
-                                <span>Envoyer un email</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/bilal-rouane-311133340/" 
-                               target="_blank" 
-                               class="contact-option">
-                                <i class="fab fa-linkedin"></i>
-                                <span>Me contacter sur LinkedIn</span>
-                            </a>
+                    <div class="disponibilite-card">
+                        <h3><i class="fas fa-briefcase"></i> Projets professionnels</h3>
+                        <p>Je suis intéressé par les projets dans les domaines suivants :</p>
+                        <div class="projets-interets">
+                            <span class="projet-badge">Administration réseaux</span>
+                            <span class="projet-badge">Cybersécurité</span>
+                            <span class="projet-badge">Infrastructure cloud</span>
+                            <span class="projet-badge">Virtualisation</span>
+                            <span class="projet-badge">Support technique</span>
+                            <span class="projet-badge">Projets internationaux</span>
                         </div>
+                    </div>
+                </div>
+                
+                <div class="contact-direct" style="margin-top: 30px;">
+                    <h3><i class="fas fa-comment-dots"></i> Contact direct</h3>
+                    <p>Pour un échange plus rapide, n'hésitez pas à :</p>
+                    <div class="contact-options">
+                        <a href="tel:+33743290209" class="contact-option">
+                            <i class="fas fa-phone"></i>
+                            <span>M'appeler directement</span>
+                        </a>
+                        <a href="mailto:bilal.rouane.pro@gmail.com" class="contact-option">
+                            <i class="fas fa-envelope"></i>
+                            <span>Envoyer un email</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/bilal-rouane-311133340/" 
+                           target="_blank" 
+                           class="contact-option">
+                            <i class="fab fa-linkedin"></i>
+                            <span>Me contacter sur LinkedIn</span>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -355,7 +814,7 @@
                     <li><i class="fas fa-network-wired"></i> Réseaux Cisco & Fortinet</li>
                     <li><i class="fas fa-shield-alt"></i> Sécurité informatique</li>
                     <li><i class="fas fa-server"></i> Administration systèmes</li>
-                    <li><i class="fas fa-flask"></i> Riguer scientifique</li>
+                    <li><i class="fas fa-flask"></i> Rigueur scientifique</li>
                 </ul>
             </div>
             
@@ -394,8 +853,10 @@
             const navLinks = document.querySelectorAll('.nav-link');
             
             navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentPage || 
-                    (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+                const href = link.getAttribute('href');
+                if (href === currentPage || 
+                    (currentPage === '' && href === 'index.html') ||
+                    (currentPage === 'contact.html' && href === 'contact.html')) {
                     link.classList.add('active');
                 } else {
                     link.classList.remove('active');
