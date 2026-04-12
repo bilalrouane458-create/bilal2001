@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -45,7 +44,7 @@
             padding: 20px;
         }
 
-        /* ===== HEADER & NAVIGATION ===== */
+        /* ===== HEADER & NAVIGATION - BLEU FONCÉ ===== */
         header {
             background: linear-gradient(135deg, #0a1a3a 0%, #0a1a3a 100%);
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -96,13 +95,13 @@
             vertical-align: middle;
         }
 
-        /* ===== SECTION ACCUEIL ===== */
+        /* ===== SECTION ACCUEIL AVEC BANNIÈRE BLEU FONCÉ ===== */
         #accueil {
-            background: white;
+            background: #0a1a3a;
             border-radius: 25px;
-            padding: 40px;
+            padding: 50px 40px;
             margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
         .titre_presentation {
@@ -111,20 +110,22 @@
         }
 
         #nom {
-            font-size: 3rem;
-            color: #0a1a3a;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 25px;
             font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
         }
 
+        /* PHOTO AGRANDIE */
         .photo-container {
-            margin: 20px auto;
-            width: 200px;
-            height: 200px;
+            margin: 25px auto;
+            width: 280px;
+            height: 280px;
             border-radius: 50%;
             overflow: hidden;
-            border: 4px solid #0a1a3a;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 4px solid white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
 
         #photo-pro {
@@ -134,9 +135,9 @@
         }
 
         .sous-titre {
-            font-size: 1.3rem;
-            color: #4a627a;
-            margin-top: 10px;
+            font-size: 1.4rem;
+            color: #e0e7ff;
+            margin-top: 15px;
         }
 
         .presentation {
@@ -146,22 +147,22 @@
 
         .section_titres {
             font-size: 1.8rem;
-            color: #0a1a3a;
-            border-left: 5px solid #0a1a3a;
+            color: white;
+            border-left: 5px solid white;
             padding-left: 20px;
             margin-bottom: 25px;
             font-weight: 600;
         }
 
         .section_titres i {
-            color: #0a1a3a;
+            color: white;
             margin-right: 12px;
         }
 
         .description {
             font-size: 1.1rem;
             line-height: 1.7;
-            color: #2c3e50;
+            color: #e0e7ff;
             margin-bottom: 20px;
         }
 
@@ -185,30 +186,43 @@
         }
 
         .btn-nav-primary {
-            background: #0a1a3a;
-            color: white;
+            background: white;
+            color: #0a1a3a;
         }
 
         .btn-nav-primary:hover {
-            background: #1e3a5f;
+            background: #e0e7ff;
             transform: translateY(-2px);
         }
 
         .btn-nav-secondary {
             background: transparent;
-            color: #0a1a3a;
-            border: 2px solid #0a1a3a;
+            color: white;
+            border: 2px solid white;
         }
 
         .btn-nav-secondary:hover {
-            background: #0a1a3a;
-            color: white;
+            background: white;
+            color: #0a1a3a;
             transform: translateY(-2px);
         }
 
         /* ===== COMPÉTENCES ===== */
         #competences_accueil {
             margin-top: 40px;
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        #competences_accueil .section_titres {
+            color: #0a1a3a;
+            border-left: 5px solid #0a1a3a;
+        }
+
+        #competences_accueil .section_titres i {
+            color: #0a1a3a;
         }
 
         .grid-competences {
@@ -366,7 +380,11 @@
                 text-align: center;
             }
             #accueil {
-                padding: 20px;
+                padding: 30px 20px;
+            }
+            .photo-container {
+                width: 200px;
+                height: 200px;
             }
             .boutons-navigation {
                 flex-direction: column;
@@ -375,6 +393,9 @@
             .btn-nav {
                 width: 100%;
                 justify-content: center;
+            }
+            #competences_accueil {
+                padding: 20px;
             }
         }
     </style>
@@ -433,7 +454,7 @@
         <div class="contenu">
             <span id="saut_menu"></span>
  
-            <!-- Section Accueil -->
+            <!-- Section Accueil - BANNIÈRE BLEU FONCÉ AVEC PHOTO AGRANDIE -->
             <section id="accueil" aria-labelledby="titre-accueil">
                 <div class="titre_presentation">
                     <h1 id="nom">Bilal ROUANE</h1>
@@ -462,51 +483,51 @@
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Compétences principales -->
-                <section id="competences_accueil" aria-labelledby="titre-competences-accueil">
-                    <h2 id="titre-competences-accueil" class="section_titres">
-                        <i class="fas fa-star"></i> Compétences Techniques
-                    </h2>
-                    
-                    <div class="grid-competences">
-                        <div class="carte-competence">
-                            <img class="logo-competence" src="Images/cisco logo.png" 
-                                 alt="Logo Cisco" width="60" height="60">
-                            <h3 class="nom-competence">Réseaux Cisco</h3>
-                            <p class="niveau-competence">Avancé</p>
-                            <ul class="details-competence">
-                                <li>Configuration VLAN</li>
-                                <li>Routing statique/dynamique</li>
-                                <li>ACL & Sécurité</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="carte-competence">
-                            <img class="logo-competence" src="Images/logo linux.jpg" 
-                                 alt="Logo Linux" width="60" height="60">
-                            <h3 class="nom-competence">Administration Linux</h3>
-                            <p class="niveau-competence">Intermédiaire</p>
-                            <ul class="details-competence">
-                                <li>Services réseau</li>
-                                <li>Shell scripting</li>
-                                <li>Gestion serveurs</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="carte-competence">
-                            <img class="logo-competence" src="Images/logo Windows Server 2022.jpg" 
-                                 alt="Logo Windows Server" width="60" height="60">
-                            <h3 class="nom-competence">Windows Server</h3>
-                            <p class="niveau-competence">Intermédiaire</p>
-                            <ul class="details-competence">
-                                <li>Active Directory</li>
-                                <li>GPO</li>
-                                <li>DHCP/DNS</li>
-                            </ul>
-                        </div>
+            <!-- Compétences principales (fond blanc) -->
+            <section id="competences_accueil" aria-labelledby="titre-competences-accueil">
+                <h2 id="titre-competences-accueil" class="section_titres">
+                    <i class="fas fa-star"></i> Compétences Techniques
+                </h2>
+                
+                <div class="grid-competences">
+                    <div class="carte-competence">
+                        <img class="logo-competence" src="Images/cisco logo.png" 
+                             alt="Logo Cisco" width="60" height="60">
+                        <h3 class="nom-competence">Réseaux Cisco</h3>
+                        <p class="niveau-competence">Avancé</p>
+                        <ul class="details-competence">
+                            <li>Configuration VLAN</li>
+                            <li>Routing statique/dynamique</li>
+                            <li>ACL & Sécurité</li>
+                        </ul>
                     </div>
-                </section>
+                    
+                    <div class="carte-competence">
+                        <img class="logo-competence" src="Images/logo linux.jpg" 
+                             alt="Logo Linux" width="60" height="60">
+                        <h3 class="nom-competence">Administration Linux</h3>
+                        <p class="niveau-competence">Intermédiaire</p>
+                        <ul class="details-competence">
+                            <li>Services réseau</li>
+                            <li>Shell scripting</li>
+                            <li>Gestion serveurs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="carte-competence">
+                        <img class="logo-competence" src="Images/logo Windows Server 2022.jpg" 
+                             alt="Logo Windows Server" width="60" height="60">
+                        <h3 class="nom-competence">Windows Server</h3>
+                        <p class="niveau-competence">Intermédiaire</p>
+                        <ul class="details-competence">
+                            <li>Active Directory</li>
+                            <li>GPO</li>
+                            <li>DHCP/DNS</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
