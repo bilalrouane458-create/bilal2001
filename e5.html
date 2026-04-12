@@ -9,158 +9,226 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
     <link rel="icon" type="image/x-icon" href="Images/Photo pro.jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- STYLES SPECIFIQUES E5 (Inspirés de ta capture) --- */
+        :root {
+            --blue-header: #0a2e7a;
+            --blue-light: #cbd9ef;
+            --blue-accent: #1d63ed;
+            --bg-dark: #151d29;
+        }
+
+        .fond { background-color: var(--bg-dark); color: white; font-family: 'Roboto', sans-serif; }
+
+        /* Titre principal */
+        .e5-main-header {
+            background-color: var(--blue-header);
+            border: 2px solid #3a4b8c;
+            padding: 15px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 1000px;
+            border-radius: 5px;
+        }
+        .e5-main-header h1 { margin: 0; font-size: 1.8rem; color: white; }
+        .e5-main-header span { color: #8eb4ff; font-weight: normal; }
+
+        /* Grille d'introduction (2 colonnes) */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto 30px;
+        }
+        .intro-card {
+            background-color: var(--blue-light);
+            color: #0a2e7a;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(173, 216, 230, 0.3);
+        }
+        .intro-card h2 {
+            background-color: #9ebce6;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            margin-top: 0;
+        }
+        .intro-card ul { padding-left: 20px; }
+        .intro-card li { margin-bottom: 10px; }
+
+        /* Bloc Tableau de Synthèse */
+        .synthese-section {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #1d63ed;
+        }
+        .synthese-header {
+            background-color: var(--blue-accent);
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .synthese-body {
+            background-color: #1a2a44;
+            padding: 20px;
+        }
+        .btn-download {
+            display: inline-block;
+            background-color: #333d52;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #444;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+        .btn-download:hover { background-color: #45526e; }
+
+        /* Grille des projets */
+        .section_titres { text-align: center; margin-bottom: 30px; color: #fff; border-bottom: 2px solid var(--blue-accent); display: inline-block; padding-bottom: 5px; }
+        .center-titre { text-align: center; }
+
+        .realisations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .realisation-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .realisation-card:hover { border-color: var(--blue-accent); transform: translateY(-5px); }
+        .realisation-icon { font-size: 2rem; color: var(--blue-accent); margin-bottom: 15px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .intro-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body class="fond">
 
     <header>
-        <nav id="navigation" aria-label="Navigation principale">
+        <nav id="navigation">
             <ul class="menu">
-                <li class="logo"><img src="Images/signature.png" id="signature" alt="Signature Bilal Rouane"></li>
-                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
-                <li><a href="apropos.html" class="nav-link"><i class="fas fa-user"></i> À propos</a></li>
-                <li><a href="btssisr.html" class="nav-link"><i class="fas fa-graduation-cap"></i> BTS SISR</a></li>
-                <li><a href="e5.html" class="nav-link active"><i class="fas fa-tasks"></i> Épreuve E5</a></li>
-                <li><a href="e6.html" class="nav-link"><i class="fas fa-server"></i> Épreuve E6</a></li>
-                <li><a href="veille.html" class="nav-link"><i class="fas fa-binoculars"></i> Veille</a></li>
-                <li><a href="entreprise.html" class="nav-link"><i class="fas fa-building"></i> Entreprise</a></li>
-                <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li class="logo"><img src="Images/signature.png" id="signature" alt="Signature"></li>
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="e5.html" class="nav-link active">Épreuve E5</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </nav>
-        <span id="saut_separateur"></span>
     </header>
 
     <main>
         <div class="contenu">
-            <span id="saut_menu"></span>
+            <div class="e5-main-header">
+                <h1>Épreuve E5 <span>– Support et mise à disposition de services informatiques –</span></h1>
+            </div>
+
+            <div class="intro-grid">
+                <div class="intro-card">
+                    <h2>Introduction à l'Épreuve E5</h2>
+                    <p>L'épreuve E5 est une épreuve orale appuyée sur un portfolio numérique. Elle vise à évaluer le parcours professionnel et scolaire du candidat, la qualité des réalisations effectuées (projets, TP, stages) et sa capacité à les présenter, à analyser les situations rencontrées et à expliquer les choix techniques et organisationnels réalisés.</p>
+                </div>
+                <div class="intro-card">
+                    <h2>Contenu de l'épreuve</h2>
+                    <ul>
+                        <li><strong>Portfolio numérique :</strong> présentation personnelle, compétences, projets, expériences de stage, veille technologique.</li>
+                        <li><strong>Tableau de synthèse :</strong> liste des réalisations professionnelles et compétences du référentiel associées.</li>
+                        <li><strong>Entretien oral :</strong> présentation + questions du jury (durée indicative totale ~40 minutes).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="synthese-section">
+                <div class="synthese-header">
+                    Tableau de synthèse des réalisations professionnelles
+                </div>
+                <div class="synthese-body">
+                    <p>Le tableau de synthèse est un document obligatoire pour l'épreuve E5 qui présente l'ensemble des réalisations professionnelles effectuées pendant la formation et les stages en lien avec le référentiel de compétences du BTS SIO.</p>
+                    <a href="projet/synthese.pdf" target="_blank" class="btn-download">
+                        Télécharger <i class="fas fa-chevron-right" style="font-size: 0.8rem; margin-left: 5px;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="center-titre">
+                <h2 class="section_titres"><i class="fas fa-school"></i> Mes Projets Scolaires</h2>
+            </div>
             
-            <section id="titre-e5">
-                <h1 class="page-titre">Épreuve E5 – Support et mise à disposition de services informatiques</h1>
-                <p class="page-sous-titre">BTS SIO – IRIS School</p>
-            </section>
-
-            <section id="projets-scolaires" class="section-e5">
-                <h2 class="section_titres"><i class="fas fa-school"></i> Projets scolaires</h2>
-                <div class="realisations-grid">
-
-                    <a href="projet/Restructuration de l'infrastructure.pdf" target="_blank" class="realisation-card-link">
-                        <div class="realisation-card">
-                            <div class="realisation-icon"><i class="fas fa-network-wired"></i></div>
-                            <h3>Restructuration Réseau</h3>
-                            <p>Optimisation des performances.</p>
-                        </div>
-                    </a>
-
-                    <a href="projet/Sécurisation des communication entre sites.pdf" target="_blank" class="realisation-card-link">
-                        <div class="realisation-card">
-                            <div class="realisation-icon"><i class="fas fa-lock"></i></div>
-                            <h3>Sécurisation Inter-sites</h3>
-                            <p>VPN et Tunnels sécurisés.</p>
-                        </div>
-                    </a>
-
-                    <a href="projet/Administration et gestion du patrimoine informatique.pdf" target="_blank" class="realisation-card-link">
-                        <div class="realisation-card">
-                            <div class="realisation-icon"><i class="fas fa-database"></i></div>
-                            <h3>Gestion Parc (OCS/GLPI)</h3>
-                            <p>Inventaire et gestion.</p>
-                        </div>
-                    </a>
-
-                    <a href="projet/Supervision de l'infrastructure.pdf" target="_blank" class="realisation-card-link">
-                        <div class="realisation-card">
-                            <div class="realisation-icon"><i class="fas fa-chart-line"></i></div>
-                            <h3>Supervision Nagios</h3>
-                            <p>Surveillance active.</p>
-                        </div>
-                    </a>
-
-                    <a href="projet/Sécurisation de l'infrastructure.pdf" target="_blank" class="realisation-card-link">
-                        <div class="realisation-card">
-                            <div class="realisation-icon"><i class="fas fa-shield-alt"></i></div>
-                            <h3>IDS/IPS Snort</h3>
-                            <p>Détection d'intrusions.</p>
-                        </div>
-                    </a>
-
-                    <a href="projet/Mise en place du Wi-Fi.pdf" target="_blank" class="realisation-card-link">
-                        <div class="realisation-card">
-                            <div class="realisation-icon"><i class="fas fa-wifi"></i></div>
-                            <h3>Réseau Wi-Fi</h3>
-                            <p>Authentification 802.1X.</p>
-                        </div>
-                    </a>
-
-                </div>
-            </section>
-
-            <section id="stages" class="section-e5">
-                <h2 class="section_titres"><i class="fas fa-briefcase"></i> Projets de stage</h2>
-                <div class="stages-container">
-                    
-                    <div class="stage-card stage-1">
-                        <a href="projet/stage 1 .pdf" target="_blank" style="text-decoration: none; color: inherit;">
-                            <div class="stage-badge">Stage 1ère année</div>
-                            <div class="stage-content">
-                                <div class="stage-icon"><i class="fas fa-file-alt"></i></div>
-                                <h3>Rapport de Stage 1</h3>
-                                <p>Cliquer pour ouvrir</p>
-                            </div>
-                        </a>
+            <div class="realisations-grid">
+                <a href="projet/Restructuration de l'infrastructure.pdf" target="_blank" class="realisation-card-link">
+                    <div class="realisation-card">
+                        <div class="realisation-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Restructuration Réseau</h3>
+                        <p>Optimisation des performances et segmentation.</p>
                     </div>
+                </a>
 
-                    <div class="stage-card stage-2">
-                        <a href="projet/stage 2 .pdf" target="_blank" style="text-decoration: none; color: inherit;">
-                            <div class="stage-badge">Stage 2ème année</div>
-                            <div class="stage-content">
-                                <div class="stage-icon"><i class="fas fa-shield-haltered"></i></div>
-                                <h3>Rapport Stage 2</h3>
-                                <p>Cliquer pour ouvrir</p>
-                            </div>
-                        </a>
+                <a href="projet/Sécurisation des communication entre sites.pdf" target="_blank" class="realisation-card-link">
+                    <div class="realisation-card">
+                        <div class="realisation-icon"><i class="fas fa-lock"></i></div>
+                        <h3>Sécurisation Inter-sites</h3>
+                        <p>Mise en place de tunnels VPN IPSec.</p>
                     </div>
+                </a>
 
+                <a href="projet/Administration et gestion du patrimoine informatique.pdf" target="_blank" class="realisation-card-link">
+                    <div class="realisation-card">
+                        <div class="realisation-icon"><i class="fas fa-database"></i></div>
+                        <h3>Gestion Parc (OCS/GLPI)</h3>
+                        <p>Inventaire automatisé et gestion de parc.</p>
+                    </div>
+                </a>
+                
                 </div>
-            </section>
 
-            <section id="tableau-synthese" class="section-e5">
-                <h2 class="section_titres"><i class="fas fa-table"></i> Tableau de synthèse</h2>
-                <div class="synthese-container">
-                   <a href="projet/synthese.pdf" target="_blank">Ouvrir le Tableau de synthèse</a>
-                        <div class="synthese-preview">
-                            <div class="preview-header">
-                                <i class="fas fa-file-pdf"></i>
-                                <span>Ouvrir le Tableau de synthèse</span>
-                            </div>
-                            <div class="preview-info">
-                                <p><i class="fas fa-external-link-alt"></i> Voir le document PDF</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </section>
+            <div class="center-titre" style="margin-top: 50px;">
+                <h2 class="section_titres"><i class="fas fa-briefcase"></i> Expériences en Entreprise</h2>
+            </div>
+
+            <div class="realisations-grid" style="margin-bottom: 50px;">
+                <a href="projet/stage 1 .pdf" target="_blank" class="realisation-card-link">
+                    <div class="realisation-card">
+                        <div class="realisation-icon"><i class="fas fa-file-contract"></i></div>
+                        <h3>Stage 1ère Année</h3>
+                        <p>Support et déploiement d'infrastructure.</p>
+                    </div>
+                </a>
+
+                <a href="projet/stage 2 .pdf" target="_blank" class="realisation-card-link">
+                    <div class="realisation-card">
+                        <div class="realisation-icon"><i class="fas fa-user-shield"></i></div>
+                        <h3>Stage 2ème Année</h3>
+                        <p>Spécialisation Cybersécurité / Réseau.</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </main>
 
     <footer>
         <div class="footer-bas">
-            <div class="copyright">
-                <p>© 2025 - Bilal Rouane - Tous droits réservés</p>
-                <p>bilal.rouane.pro@gmail.com</p>
-            </div>
+            <p>© 2025 - Bilal Rouane - BTS SIO SISR</p>
         </div>
     </footer>
 
-    <style>
-        .realisation-card-link { text-decoration: none; color: inherit; display: block; }
-        .realisation-card:hover, .synthese-preview:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transition: 0.3s;
-        }
-    </style>
 </body>
 </html>
