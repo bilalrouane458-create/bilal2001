@@ -197,6 +197,19 @@
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .realisation-badge a {
+            transition: opacity 0.2s ease;
+        }
+
+        .realisation-badge a:hover {
+            opacity: 0.8;
+            text-decoration: underline !important;
         }
 
         .realisation-body {
@@ -828,7 +841,10 @@
                         </div>
                         <div class="realisation-badge">
                             <i class="fas fa-file-pdf"></i> 
-                            <a href="projet/E6-REA-1.pdf" style="color:white; text-decoration:none;">Voir le PDF complet</a>
+                            <a href="projet/E6-REA-1.pdf" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration:none;">Voir le PDF complet</a>
+                            <span style="color: rgba(255,255,255,0.4);">|</span>
+                            <i class="fas fa-file-alt"></i> 
+                            <a href="projet/r%C3%A9alisation%201.pdf" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration:none;">Documentation technique</a>
                         </div>
                     </div>
                     <div class="realisation-body">
@@ -902,7 +918,7 @@
                         </div>
                         <div class="realisation-badge">
                             <i class="fas fa-file-pdf"></i> 
-                            <a href="projet/E6-REA-2.pdf" style="color:white; text-decoration:none;">Voir le PDF complet</a>
+                            <a href="projet/E6-REA-2.pdf" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration:none;">Voir le PDF complet</a>
                         </div>
                     </div>
                     <div class="realisation-body">
@@ -1043,10 +1059,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Le reste du contenu (Modalités, Objectifs, Préparation, Projets, Footer) reste identique -->
-            <!-- ... -->
-
         </div>
     </main>
 
