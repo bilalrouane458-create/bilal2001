@@ -204,6 +204,137 @@
             color: #1e2e3e;
         }
 
+        /* STYLE POUR LE BOUTON CV */
+        .cv-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-cv {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0a1a3a;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-cv i {
+            font-size: 1.2rem;
+        }
+        
+        .btn-cv:hover {
+            background: #1e3a5f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(10,26,58,0.3);
+        }
+        
+        .btn-cv-outline {
+            background: transparent;
+            border: 2px solid #0a1a3a;
+            color: #0a1a3a;
+        }
+        
+        .btn-cv-outline:hover {
+            background: #0a1a3a;
+            color: white;
+        }
+
+        /* MODAL POUR PDF */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            position: relative;
+            background-color: white;
+            margin: 2% auto;
+            padding: 20px;
+            width: 90%;
+            height: 90%;
+            max-width: 1200px;
+            border-radius: 20px;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .close-modal {
+            position: absolute;
+            right: 25px;
+            top: 15px;
+            font-size: 35px;
+            font-weight: bold;
+            color: #0a1a3a;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 10;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-modal:hover {
+            color: #ff4444;
+            transform: scale(1.1);
+        }
+        
+        .modal-iframe {
+            width: 100%;
+            height: calc(100% - 20px);
+            border: none;
+            border-radius: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                height: 95%;
+                margin: 5% auto;
+                padding: 10px;
+            }
+            .close-modal {
+                right: 15px;
+                top: 5px;
+                font-size: 28px;
+            }
+        }
+
         /* TIMELINE */
         .parcours-timeline {
             display: flex;
@@ -367,14 +498,14 @@
             color: white;
         }
 
+        .interet-card:hover i {
+            color: white;
+        }
+
         .interet-card i {
             font-size: 2.5rem;
             margin-bottom: 15px;
             color: #0a1a3a;
-        }
-
-        .interet-card:hover i {
-            color: white;
         }
 
         .interet-card h4 {
@@ -473,6 +604,9 @@
                 width: 100%;
                 text-align: center;
             }
+            .cv-buttons {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -506,7 +640,7 @@
                 <p class="page-sous-titre">Découvrez mon parcours, mes compétences et mes aspirations professionnelles</p>
             </section>
 
-            <!-- Section Profil avec PHOTO À GAUCHE -->
+            <!-- Section Profil avec PHOTO À GAUCHE + BOUTONS CV -->
             <section id="profil" class="section-apropos">
                 <div class="profil-container">
                     <div class="photo-profil">
@@ -516,10 +650,19 @@
                         <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
                     </div>
                     <div class="bio-content">
-                        <p>Je suis étudiant en BTS SIO option SISR, spécialisé dans l’administration des systèmes et réseaux.
-J’ai des compétences en configuration réseau, gestion des serveurs Windows/Linux, virtualisation et sécurité informatique.</p>
+                        <p>Je suis étudiant en BTS SIO option SISR, spécialisé dans l'administration des systèmes et réseaux.
+J'ai des compétences en configuration réseau, gestion des serveurs Windows/Linux, virtualisation et sécurité informatique.</p>
                         <div class="bio-highlight">
                             <p><i class="fas fa-quote-left"></i> Passionné par les technologies, je suis constamment à la recherche de nouveaux défis pour améliorer mes compétences et apporter des solutions innovantes.</p>
+                        </div>
+                        <!-- BOUTONS POUR LE CV -->
+                        <div class="cv-buttons">
+                            <a href="projet/cvbilal.pdf" class="btn-cv" download="Bilal_Rouane_CV.pdf">
+                                <i class="fas fa-download"></i> Télécharger mon CV
+                            </a>
+                            <button id="viewCvBtn" class="btn-cv btn-cv-outline">
+                                <i class="fas fa-eye"></i> Voir mon CV
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -676,6 +819,14 @@ J’ai des compétences en configuration réseau, gestion des serveurs Windows/L
         </div>
     </main>
 
+    <!-- MODAL POUR AFFICHER LE PDF -->
+    <div id="cvModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <iframe id="cvIframe" class="modal-iframe" src="projet/cvbilal.pdf" title="CV Bilal Rouane"></iframe>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-contenu">
             <div class="footer-section">
@@ -721,6 +872,7 @@ J’ai des compétences en configuration réseau, gestion des serveurs Windows/L
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Gestion de l'active sur les liens de navigation
             const currentPage = window.location.pathname.split('/').pop();
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
@@ -729,6 +881,43 @@ J’ai des compétences en configuration réseau, gestion des serveurs Windows/L
                     link.classList.add('active');
                 } else {
                     link.classList.remove('active');
+                }
+            });
+            
+            // GESTION DU MODAL POUR LE CV
+            const modal = document.getElementById('cvModal');
+            const viewBtn = document.getElementById('viewCvBtn');
+            const closeBtn = document.querySelector('.close-modal');
+            const iframe = document.getElementById('cvIframe');
+            
+            // Ouvrir le modal
+            viewBtn.addEventListener('click', function() {
+                modal.style.display = 'block';
+                // Recharger l'iframe à chaque ouverture (optionnel)
+                iframe.src = iframe.src;
+                // Empêcher le scroll du body
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Fermer le modal avec la croix
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Fermer le modal si on clique à l'extérieur (sur le fond)
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Fermer avec la touche Echap
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
                 }
             });
         });
